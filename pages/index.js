@@ -29,7 +29,7 @@ export default function Home() {
         </div>
         <div className="w-full md:w-1/2 flex justify-center mt-10 md:mt-0">
           <img
-            src="/images/profile.svg"
+            src="/images/hero.JPG"
             alt="Fortune"
             className="w-80 rounded-lg shadow-lg"
           />
