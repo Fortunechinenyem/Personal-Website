@@ -4,6 +4,29 @@ import Link from "next/link";
 import { FaCode, FaPen, FaHeadset, FaUserGraduate } from "react-icons/fa";
 
 export default function Home() {
+  const testimonials = [
+    {
+      id: 1,
+      name: "Jane Doe",
+      role: "Mentee",
+      testimonial:
+        "Fortune's mentorship transformed my career! Her guidance is invaluable and her insights are spot on.",
+    },
+    {
+      id: 2,
+      name: "John Smith",
+      role: "Client",
+      testimonial:
+        "The customer experience services provided by Fortune were exceptional. She goes above and beyond to meet your needs.",
+    },
+    {
+      id: 3,
+      name: "Emily White",
+      role: "Colleague",
+      testimonial:
+        "Working with Fortune has been a pleasure. She’s a true professional with a wealth of knowledge and a generous spirit.",
+    },
+  ];
   return (
     <Layout>
       <section className="flex flex-col md:flex-row items-center justify-center min-h-screen text-center md:text-left mt-16 px-6">
@@ -97,6 +120,27 @@ export default function Home() {
           Let’s Talk
         </Link>
       </section>
+      <div className="mt-20">
+        <h3 className="text-3xl font-bold text-center dark:text-white">
+          What People Are Saying
+        </h3>
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mt-8">
+          {testimonials.map((testimonial) => (
+            <div
+              key={testimonial.id}
+              className="bg-white dark:bg-gray-800 shadow-lg rounded-lg p-6"
+            >
+              <p className="text-lg italic text-gray-700 dark:text-gray-300">
+                "{testimonial.testimonial}"
+              </p>
+              <p className="mt-4 font-semibold text-gray-800 dark:text-white">
+                {testimonial.name}{" "}
+                <span className="text-gray-500">- {testimonial.role}</span>
+              </p>
+            </div>
+          ))}
+        </div>
+      </div>
     </Layout>
   );
 }

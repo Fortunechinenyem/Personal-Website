@@ -17,7 +17,7 @@ const Navbar = () => {
         </Link>
 
         <div className="hidden md:flex space-x-6">
-          {["about", "work", "blog", "contact"].map((item) => (
+          {["about", "work", "services", "blog", "contact"].map((item) => (
             <Link
               key={item}
               href={`/${item}`}
@@ -44,7 +44,7 @@ const Navbar = () => {
 
       {isOpen && (
         <div className="md:hidden flex flex-col items-center bg-white dark:bg-gray-900 py-4">
-          {["about", "work", "blog", "contact"].map((item) => (
+          {["about", "work", "services", "blog", "contact"].map((item) => (
             <Link
               key={item}
               href={`/${item}`}

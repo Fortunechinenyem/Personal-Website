@@ -1,9 +1,7 @@
 const Footer = () => {
   return (
-    <footer className="bg-gray-100 text-center p-4 mt-10">
-      <p>
-        © {new Date().getFullYear()} Fortune | Built with Next.js & Tailwind CSS
-      </p>
+    <footer className="bg-gray-900 text-white text-center p-4 mt-10">
+      <p>© {new Date().getFullYear()} Fortune | IyaInTech</p>
     </footer>
   );
 };
