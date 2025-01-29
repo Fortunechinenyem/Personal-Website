@@ -20,7 +20,7 @@ export default function Contact() {
             placeholder="Your Message"
             className="w-full p-3 border rounded-lg mb-4 dark:bg-gray-700 dark:text-white"
           ></textarea>
-          <button className="px-6 py-3 bg-blue-600 text-white rounded-lg shadow-lg hover:bg-blue-700">
+          <button className="px-6 py-3 bg-[#2c9c46] text-white rounded-lg shadow-lg hover:bg-blue-700">
             Send Message
           </button>
         </form>

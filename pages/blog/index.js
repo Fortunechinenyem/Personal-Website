@@ -39,7 +39,7 @@ export default function Blog() {
               </h3>
               <Link
                 href={`/blog/${post.slug}`}
-                className="text-blue-600 hover:underline mt-2 block"
+                className="text-[#2c9c46] hover:underline mt-2 block"
               >
                 Read More →
               </Link>

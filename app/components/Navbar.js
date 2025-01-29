@@ -2,6 +2,8 @@ import { useState } from "react";
 import { Moon, Sun, Menu, X } from "lucide-react";
 import { useTheme } from "next-themes";
 import Link from "next/link";
+import Image from "next/image";
+import { Logo } from "@/public/images";
 
 const Navbar = () => {
   const { theme, setTheme } = useTheme();
@@ -11,7 +13,7 @@ const Navbar = () => {
     <nav className="bg-white dark:bg-gray-900 fixed w-full z-10 shadow-md">
       <div className="container mx-auto flex justify-between items-center p-4">
         <Link href="/" className="text-2xl font-bold dark:text-white">
-          Fortune
+          <Image src={Logo} width={100} height={100} alt="logo" priority />
         </Link>
 
         <div className="hidden md:flex space-x-6">
