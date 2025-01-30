@@ -73,7 +73,7 @@ export default function Home() {
       <section className="flex flex-col md:flex-row items-center justify-center min-h-screen text-center md:text-left mt-16 px-6">
         <div className="w-full md:w-1/2">
           <h1 className="text-5xl font-extrabold dark:text-white animate__animated animate__fadeIn animate__delay-1s">
-            Hi, I'm <span className="text-[#2c9c46]">Fortune</span> 👋
+            Hi, I'm <span className="text-[#2c9c46]">Fortune</span>
           </h1>
           <p className="text-lg text-gray-600 dark:text-gray-300 mt-4 animate__animated animate__fadeIn animate__delay-2s">
             <TypeAnimation
