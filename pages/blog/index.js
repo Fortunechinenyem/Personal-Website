@@ -1,7 +1,8 @@
 import Layout from "@/app/components/Layout";
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { FaArrowUp } from "react-icons/fa";
 
 const posts = [
   {
@@ -43,6 +44,27 @@ export default function Blog() {
       (selectedCategory === "All" || post.category === selectedCategory) &&
       post.title.toLowerCase().includes(searchQuery.toLowerCase())
   );
+  const [showButton, setShowButton] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 300) {
+        setShowButton(true);
+      } else {
+        setShowButton(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
 
   return (
     <Layout>
@@ -106,6 +128,18 @@ export default function Blog() {
           ))}
         </div>
       </section>
+      <div className="group fixed bottom-8 right-8">
+        <button
+          onClick={scrollToTop}
+          className="p-4 bg-[#2c9c46] text-white rounded-full shadow-lg hover:bg-[#24803a] transition-all duration-300"
+          aria-label="Back to Top"
+        >
+          <FaArrowUp className="text-xl" />
+        </button>
+        <div className="absolute bottom-14 right-0 bg-gray-800 text-white text-sm px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+          Back to Top
+        </div>
+      </div>
     </Layout>
   );
 }

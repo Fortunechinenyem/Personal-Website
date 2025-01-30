@@ -1,8 +1,37 @@
+import { useEffect, useState } from "react";
 import Layout from "@/app/components/Layout";
+import { FaArrowUp } from "react-icons/fa";
 import Image from "next/image";
 import Link from "next/link";
 
 export default function Work() {
+  const [scrollProgress, setScrollProgress] = useState(0);
+  const [showButton, setShowButton] = useState(false);
+
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const totalHeight =
+        document.documentElement.scrollHeight - window.innerHeight;
+      const progress = (window.scrollY / totalHeight) * 100;
+      setScrollProgress(progress);
+
+      if (window.scrollY > 300) {
+        setShowButton(true);
+      } else {
+        setShowButton(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
   return (
     <Layout>
       <section className="text-center mt-20 px-6 md:px-16">
@@ -12,8 +41,65 @@ export default function Work() {
           modern technologies and thoughtful design.
         </p>
       </section>
+      <section className="py-16 bg-white dark:bg-gray-900 text-center">
+        <h2 className="text-3xl font-bold dark:text-white mb-6">
+          My Portfolio
+        </h2>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 px-6">
+          {[
+            {
+              id: 1,
+              title: "Project Alpha",
+              description: "A web app for managing tasks efficiently.",
+              image: "/images/project1.jpg",
+              link: "#",
+            },
+            {
+              id: 2,
+              title: "Project Beta",
+              description: "An e-learning platform with interactive courses.",
+              image: "/images/project2.jpg",
+              link: "#",
+            },
+            {
+              id: 3,
+              title: "Project Gamma",
+              description: "A customer feedback analysis tool.",
+              image: "/images/project3.jpg",
+              link: "#",
+            },
+          ].map((project) => (
+            <div
+              key={project.id}
+              className="bg-white dark:bg-gray-800 shadow-lg rounded-lg overflow-hidden transform hover:scale-105 transition-all duration-300"
+            >
+              <Image
+                src={project.image}
+                alt={project.title}
+                width={400}
+                height={250}
+                className="w-full h-48 object-cover"
+              />
+              <div className="p-6">
+                <h3 className="text-xl font-semibold text-gray-800 dark:text-white">
+                  {project.title}
+                </h3>
+                <p className="text-gray-600 dark:text-gray-300 mt-2">
+                  {project.description}
+                </p>
+                <Link
+                  href={project.link}
+                  className="mt-4 inline-block px-4 py-2 bg-[#2c9c46] text-white rounded-lg hover:bg-[#24803a] transition-all duration-300"
+                >
+                  View Project
+                </Link>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
 
-      <section className="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 px-6 md:px-16">
+      {/* <section className="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 px-6 md:px-16">
         {projects.map((project) => (
           <div
             key={project.title}
@@ -64,7 +150,7 @@ export default function Work() {
             </div>
           </div>
         ))}
-      </section>
+      </section> */}
 
       <section className="mb-12 mt-10 text-center">
         <h3 className="text-3xl font-semibold text-[#2c9c46] dark:text-blue-400 mb-6">
@@ -137,6 +223,22 @@ export default function Work() {
           </div>
         </div>
       </section>
+      <div
+        className="fixed bottom-8 right-8"
+        style={{
+          background: `conic-gradient(#2c9c46 ${scrollProgress}%, transparent ${scrollProgress}% 100%)`,
+          borderRadius: "50%",
+          padding: "2px",
+        }}
+      >
+        <button
+          onClick={scrollToTop}
+          className="p-4 bg-white dark:bg-gray-900 text-[#2c9c46] rounded-full shadow-lg hover:bg-gray-200 dark:hover:bg-gray-800 transition-all duration-300"
+          aria-label="Back to Top"
+        >
+          <FaArrowUp className="text-xl" />
+        </button>
+      </div>
     </Layout>
   );
 }

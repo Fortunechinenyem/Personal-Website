@@ -4,35 +4,39 @@ import { FaTwitter, FaLinkedin, FaGithub, FaInstagram } from "react-icons/fa";
 export default function Contact() {
   return (
     <Layout>
-      <section className="mt-20 text-center px-4">
-        <h2 className="text-4xl font-bold dark:text-white">Contact Me</h2>
-        <p className="text-lg text-gray-600 dark:text-gray-300 mt-4">
-          I'd love to hear from you! Whether you have a question, want to
-          collaborate, or just want to say hi, feel free to reach out.
-        </p>
-
-        <form className="mt-8 max-w-4xl mx-auto bg-white dark:bg-gray-800 shadow-lg p-8 rounded-xl">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <section className="py-16 bg-gray-100 dark:bg-gray-800 text-center">
+        <h2 className="text-3xl font-bold dark:text-white mb-6">Contact Me</h2>
+        <form className="max-w-lg mx-auto px-6">
+          <div className="mb-4">
             <input
               type="text"
               placeholder="Your Name"
-              className="w-full p-4 border border-gray-300 rounded-lg bg-gray-50 dark:bg-gray-700 dark:text-white"
+              className="w-full px-4 py-2 rounded-lg focus:outline-none"
             />
+          </div>
+          <div className="mb-4">
             <input
               type="email"
               placeholder="Your Email"
-              className="w-full p-4 border border-gray-300 rounded-lg bg-gray-50 dark:bg-gray-700 dark:text-white"
+              className="w-full px-4 py-2 rounded-lg focus:outline-none"
             />
           </div>
-          <textarea
-            placeholder="Your Message"
-            className="w-full p-4 mt-6 border border-gray-300 rounded-lg bg-gray-50 dark:bg-gray-700 dark:text-white"
-          ></textarea>
-          <button className="mt-6 px-6 py-3 bg-[#2c9c46] text-white rounded-lg shadow-lg hover:bg-[#249a3a] transition duration-300">
+          <div className="mb-4">
+            <textarea
+              placeholder="Your Message"
+              rows="4"
+              className="w-full px-4 py-2 rounded-lg focus:outline-none"
+            ></textarea>
+          </div>
+          <button
+            type="submit"
+            className="px-6 py-3 bg-[#2c9c46] text-white rounded-lg shadow-lg hover:bg-[#24803a] transition-all duration-300"
+          >
             Send Message
           </button>
         </form>
-
+      </section>
+      <section className="mt-20 text-center px-4">
         <div className="mt-12">
           <p className="text-lg text-gray-600 dark:text-gray-300 mb-4">
             Or connect with me on social media:
@@ -72,26 +76,26 @@ export default function Contact() {
             </a>
           </div>
         </div>
-
-        <div className="mt-16 bg-gray-100 dark:bg-gray-700 p-8 rounded-xl shadow-lg">
-          <h3 className="text-3xl font-bold text-center dark:text-white">
-            Stay Updated!
-          </h3>
-          <p className="text-lg text-center text-gray-600 dark:text-gray-300 mt-4">
+        <section className="py-16 mt-7 bg-[#2c9c46] text-white text-center">
+          <h2 className="text-3xl font-bold">Stay Updated</h2>
+          <p className="text-lg text-center  dark:text-gray-300 mt-4">
             Sign up for my newsletter to receive the latest insights, updates,
             and tips in tech, career, and more.
           </p>
           <form className="mt-6 flex justify-center">
             <input
               type="email"
-              placeholder="Enter your email"
-              className="p-4 w-80 border border-gray-300 rounded-l-lg bg-gray-50 dark:bg-gray-700 dark:text-white"
+              placeholder="Your email"
+              className="px-4 py-2 rounded-l-lg focus:outline-none text-gray-800"
             />
-            <button className="px-6 py-4 bg-[#2c9c46] text-white rounded-r-lg hover:bg-[#249a3a] transition duration-300">
+            <button
+              type="submit"
+              className="px-6 py-2 bg-white text-[#2c9c46] rounded-r-lg hover:bg-gray-200 transition-all duration-300"
+            >
               Subscribe
             </button>
           </form>
-        </div>
+        </section>
       </section>
     </Layout>
   );

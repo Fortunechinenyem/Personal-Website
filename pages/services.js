@@ -1,14 +1,22 @@
 import Layout from "@/app/components/Layout";
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Slider from "react-slider";
 
 export default function Services() {
   const [consultingRate, setConsultingRate] = useState(100); // Example rate per hour
+  const [isClient, setIsClient] = useState(false);
 
   const handleSliderChange = (value) => {
     setConsultingRate(value);
   };
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
+
+  if (!isClient) {
+    return null;
+  }
 
   return (
     <Layout>
@@ -77,12 +85,13 @@ export default function Services() {
               <label className="block text-center text-gray-600 dark:text-gray-300">
                 Adjust Your Hourly Rate
               </label>
-              <div className="slider-container mt-7 mb-12">
+              <div className="slider-container mt-5 mb-10">
                 <Slider
                   min={0}
                   max={1000}
                   step={10}
                   defaultValue={500}
+                  onChange={handleSliderChange} // ✅ This ensures the state updates
                   renderTrack={(props, state) => (
                     <div
                       {...props}
@@ -107,7 +116,7 @@ export default function Services() {
                   )}
                 />
               </div>
-              <p className="text-center text-xl font-semibold text-gray-600 dark:text-gray-300">
+              <p className=" text-center text-xl font-semibold text-gray-600 dark:text-gray-300">
                 Hourly Rate: ${consultingRate} per hour
               </p>
             </div>

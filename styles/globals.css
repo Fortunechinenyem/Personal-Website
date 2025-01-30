@@ -19,6 +19,7 @@ html {
   overflow-x: hidden;
   font-family: sans-serif;
   font-weight: var(--fw-reg);
+  cursor: url("/images/cursor.png"), auto;
 }
 :root {
   --ff-primary: "Arial, Helvetica, sans-serif";
@@ -39,7 +40,10 @@ span,
 a {
   font-family: sans-serif;
 }
-/* Add this in your global styles (e.g., styles/globals.css or styles.css) */
+a,
+button {
+  cursor: url("/images/cursor-pointer.png"), pointer;
+}
 .react-slider {
   position: relative;
   height: 100%;

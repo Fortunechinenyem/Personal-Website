@@ -1,28 +1,18 @@
 import Link from "next/link";
 
-const Custom404 = () => {
+export default function NotFound() {
   return (
-    <div
-      className="relative min-h-screen bg-cover bg-center flex items-center justify-center text-white"
-      // style={{
-      //   backgroundImage: 'url("/images/pix2.jpg")',
-      // }}
-    >
-      <div className="absolute inset-0 bg-black bg-opacity-60"></div>
-      <div className="relative z-10 text-center px-6">
-        <h1 className="text-6xl font-bold mb-6">404</h1>
-        <p className="text-xl mb-8">
-          Oops! The page you’re looking for doesn’t exist.
-        </p>
-        <Link
-          href="/"
-          className="bg-blue-600 text-white py-3 px-6 rounded-lg text-lg shadow-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
-        >
-          Go Back Home
-        </Link>
-      </div>
+    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 dark:bg-gray-900 text-center">
+      <h1 className="text-6xl font-bold text-gray-800 dark:text-white">404</h1>
+      <p className="text-xl text-gray-600 dark:text-gray-300 mt-4">
+        Oops! The page you’re looking for doesn’t exist.
+      </p>
+      <Link
+        href="/"
+        className="mt-6 px-6 py-3 bg-[#2c9c46] text-white rounded-lg shadow-lg hover:bg-[#24803a] transition-all duration-300"
+      >
+        Go Home
+      </Link>
     </div>
   );
-};
-
-export default Custom404;
+}
