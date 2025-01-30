@@ -1,4 +1,6 @@
-import { notFound } from "next/navigation";
+import Layout from "@/app/components/Layout";
+import React from "react";
+import Image from "next/image";
 
 const projects = [
   {
@@ -6,7 +8,7 @@ const projects = [
     title: "Car Auction Platform",
     description:
       "A full-stack car auction platform with live bidding and payment integration, built with Next.js and WebSockets.",
-    image: "/images/hero.JPG",
+    image: ["/images/hero.JPG"],
     techStack: ["Next.js", "WebSocket", "Stripe", "MongoDB"],
     liveLink: "https://car-auction.com",
     repoLink: "https://github.com/yourusername/car-auction",
@@ -18,7 +20,7 @@ const projects = [
     title: "Personal Finance App",
     description:
       "A personal finance management tool to track expenses, income, and budgeting, built with Next.js and MongoDB.",
-    image: "/images/hero.JPG",
+    image: ["/images/hero.JPG"],
     techStack: ["Next.js", "MongoDB", "Tailwind CSS"],
     liveLink: "https://finance-app.com",
     repoLink: "https://github.com/yourusername/finance-app",
@@ -30,7 +32,7 @@ const projects = [
     title: "Event Management System",
     description:
       "A platform to manage events, RSVP, and ticketing with Next.js, designed for smooth event planning.",
-    image: "/images/hero.JPG",
+    image: ["/images/hero.JPG"],
     techStack: ["Next.js", "Firebase", "Tailwind CSS"],
     liveLink: "https://event-management.com",
     repoLink: "https://github.com/yourusername/event-management",
@@ -39,12 +41,8 @@ const projects = [
   },
 ];
 
-export default function ProjectDetail({ params }) {
-  const project = projects.find((p) => p.slug === params.slug);
-
-  if (!project) {
-    notFound();
-  }
+export default function ProjectDetail({ params: { slug } }) {
+  const project = projects.find((p) => p.slug === slug);
 
   return (
     <Layout>
@@ -59,7 +57,7 @@ export default function ProjectDetail({ params }) {
           <h2 className="text-2xl font-bold dark:text-white mb-6">
             Project Overview
           </h2>
-          <p className="text-gray-600 dark:text-gray-300">{project.overview}</p>
+          {/* <p className="text-gray-600 dark:text-gray-300">{project.overview}</p> */}
           <div className="mt-8">
             <h3 className="text-xl font-bold dark:text-white mb-4">
               Tech Stack
@@ -87,7 +85,6 @@ export default function ProjectDetail({ params }) {
                   alt={`Screenshot ${index + 1}`}
                   width={600}
                   height={400}
-                  className="rounded-lg shadow-lg"
                 />
               ))}
             </div>
@@ -109,7 +106,7 @@ export default function ProjectDetail({ params }) {
           <div className="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700">
             <div
               className="bg-[#2c9c46] h-2.5 rounded-full"
-              style={{ width: `${project.progress}%` }}
+              // style={{ width: `${project.progress}%` }}
             ></div>
           </div>
         </div>
