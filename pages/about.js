@@ -1,6 +1,4 @@
 import Layout from "@/app/components/Layout";
-import Image from "next/image";
-// import Link from "next/link";
 import { FaArrowUp } from "react-icons/fa";
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
@@ -14,6 +12,8 @@ import {
   Tooltip,
   Legend,
 } from "chart.js";
+import Link from "next/link";
+
 ChartJS.register(
   RadialLinearScale,
   PointElement,
@@ -64,6 +64,7 @@ export default function About() {
     const randomFact = funFacts[Math.floor(Math.random() * funFacts.length)];
     setFunFact(randomFact);
   };
+
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 300) {
@@ -83,24 +84,46 @@ export default function About() {
       behavior: "smooth",
     });
   };
+
   return (
     <Layout>
       <section
-        className="relative h-[400px] flex items-center justify-center bg-fixed bg-cover bg-center"
+        className="relative h-[500px] flex items-center justify-center bg-fixed bg-cover bg-center"
         style={{ backgroundImage: "url('/images/hero.JPG')" }}
       >
         <div className="absolute inset-0 bg-black bg-opacity-50"></div>
         <div className="relative text-center text-white">
-          <h2 className="text-4xl font-bold">Turning Ideas into Reality</h2>
+          <h1 className="text-5xl font-bold">Hi, I'm Fortune</h1>
           <p className="mt-4 text-lg">
-            Let’s create something extraordinary together.
+            Developer | Tutor | Blogger | Customer Experience Pro
           </p>
+          <div className="mt-6">
+            <Link
+              href="/contact"
+              className="px-6 py-3 bg-[#2c9c46] text-white rounded-lg hover:bg-[#24803a] transition-all duration-300"
+            >
+              Let’s Connect
+            </Link>
+          </div>
         </div>
       </section>
+
+      <section className="mt-20 text-center">
+        <h2 className="text-3xl font-bold dark:text-white">My Mission</h2>
+        <p className="text-lg text-gray-600 dark:text-gray-300 mt-4 max-w-2xl mx-auto">
+          I’m passionate about creating meaningful digital experiences,
+          empowering others through education, and building solutions that make
+          a difference. Let’s innovate together!
+        </p>
+      </section>
+
       <section className="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 px-6 md:px-16">
         {expertise.map((item) => (
-          <div
+          <motion.div
             key={item.title}
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
             className="bg-white dark:bg-gray-800 shadow-lg rounded-lg p-6 transform transition-all hover:scale-105"
           >
             <div className="text-5xl">{item.icon}</div>
@@ -110,79 +133,29 @@ export default function About() {
             <p className="text-gray-600 dark:text-gray-300 mt-2">
               {item.description}
             </p>
-          </div>
+          </motion.div>
         ))}
       </section>
-      <section className="py-16 bg-gray-100 dark:bg-gray-800 text-center">
-        <h2 className="text-3xl font-bold dark:text-white mb-6">Fun Fact</h2>
-        <button
-          onClick={showFunFact}
-          className="px-6 py-3 bg-[#2c9c46] text-white rounded-lg shadow-lg hover:bg-[#24803a] transition-all duration-300"
-        >
-          Click Me!
-        </button>
-        {funFact && (
-          <p className="mt-4 text-lg text-gray-800 dark:text-gray-300">
-            {funFact}
-          </p>
-        )}
-      </section>
 
-      <section className="py-16 bg-white dark:bg-gray-900 text-center">
-        <h2 className="text-3xl font-bold dark:text-white mb-6">My Journey</h2>
-        <div className="container mx-auto px-6">
-          <div className="relative">
-            <div className="absolute h-full w-1 bg-gray-200 dark:bg-gray-700 left-1/2 transform -translate-x-1/2"></div>
-            {[
-              {
-                id: 1,
-                year: "2018",
-                title: "Started Coding",
-                description: "Began my journey as a self-taught developer.",
-              },
-              {
-                id: 2,
-                year: "2020",
-                title: "First Job as a Developer",
-                description: "Landed my first role at a tech startup.",
-              },
-              {
-                id: 3,
-                year: "2021",
-                title: "Became a Tutor",
-                description: "Started mentoring aspiring developers.",
-              },
-              {
-                id: 4,
-                year: "2023",
-                title: "Launched My Blog",
-                description: "Started sharing my knowledge and experiences.",
-              },
-            ].map((item, index) => (
-              <div
-                key={item.id}
-                className={`flex ${
-                  index % 2 === 0 ? "flex-row" : "flex-row-reverse"
-                } items-center mb-8`}
-              >
-                <div className="w-1/2 px-4">
-                  <h3 className="text-xl font-semibold text-gray-800 dark:text-white">
-                    {item.title}
-                  </h3>
-                  <p className="text-gray-600 dark:text-gray-300">
-                    {item.description}
-                  </p>
-                </div>
-                <div className="w-1/2 px-4">
-                  <div className="bg-[#2c9c46] text-white rounded-lg p-4 shadow-lg">
-                    <p className="font-bold">{item.year}</p>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
+      <section className="py-16 bg-gray-100 dark:bg-gray-800 text-center">
+        <h2 className="text-3xl font-bold dark:text-white mb-6">
+          Fun Facts About Me
+        </h2>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 px-6">
+          {funFacts.map((fact, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: index * 0.2 }}
+              className="bg-white dark:bg-gray-700 shadow-lg rounded-lg p-6"
+            >
+              <p className="text-lg text-gray-600 dark:text-gray-300">{fact}</p>
+            </motion.div>
+          ))}
         </div>
       </section>
+
       <section className="py-16 bg-white dark:bg-gray-900 text-center">
         <h2 className="text-3xl font-bold dark:text-white mb-6">My Skills</h2>
         <div className="container mx-auto px-6">
@@ -212,9 +185,66 @@ export default function About() {
           ))}
         </div>
       </section>
-      <section className="py-16 bg-white dark:bg-gray-900 text-center">
-        <div className="max-w-lg mx-auto">
-          <Radar data={data} options={options} />
+
+      <section className="py-16 bg-gray-100 dark:bg-gray-800 text-center">
+        <h2 className="text-3xl font-bold dark:text-white mb-6">
+          What People Say
+        </h2>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 px-6">
+          {[
+            {
+              name: "Jane Doe",
+              role: "Student",
+              testimonial:
+                "Fortune's tutoring helped me land my first tech job. Highly recommend!",
+            },
+            {
+              name: "John Smith",
+              role: "Client",
+              testimonial:
+                "The consulting services were top-notch. Our business processes have improved significantly.",
+            },
+            {
+              name: "Emily White",
+              role: "Event Organizer",
+              testimonial:
+                "Fortune's speaking engagement was the highlight of our event. Engaging and insightful!",
+            },
+          ].map((testimonial, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: index * 0.2 }}
+              className="bg-white dark:bg-gray-700 shadow-lg rounded-lg p-6"
+            >
+              <p className="text-lg text-gray-600 dark:text-gray-300 italic">
+                "{testimonial.testimonial}"
+              </p>
+              <p className="mt-4 font-semibold text-gray-800 dark:text-white">
+                {testimonial.name}{" "}
+                <span className="text-gray-500">- {testimonial.role}</span>
+              </p>
+            </motion.div>
+          ))}
+        </div>
+      </section>
+
+      <section className="py-16 bg-[#2c9c46] text-white text-center">
+        <h2 className="text-3xl font-bold">
+          Let’s Build Something Amazing Together!
+        </h2>
+        <p className="text-lg mt-4">
+          Whether it’s a project, collaboration, or just a chat, I’d love to
+          hear from you.
+        </p>
+        <div className="mt-6">
+          <Link
+            href="/contact"
+            className="px-6 py-3 bg-white text-[#2c9c46] rounded-lg hover:bg-gray-200 transition-all duration-300"
+          >
+            Get in Touch
+          </Link>
         </div>
       </section>
 
@@ -236,7 +266,6 @@ export default function About() {
     </Layout>
   );
 }
-
 const expertise = [
   {
     title: "Software Development",
