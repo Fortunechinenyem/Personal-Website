@@ -7,6 +7,12 @@ import Link from "next/link";
 export default function Work() {
   const [scrollProgress, setScrollProgress] = useState(0);
   const [showButton, setShowButton] = useState(false);
+  const [filter, setFilter] = useState("all");
+
+  const filteredProjects = projects.filter((project) => {
+    if (filter === "all") return true;
+    return project.category === filter;
+  });
 
   const scrollToTop = () => {
     window.scrollTo({
@@ -32,6 +38,7 @@ export default function Work() {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
   return (
     <Layout>
       <section className="text-center mt-20 px-6 md:px-16">
@@ -45,41 +52,64 @@ export default function Work() {
         <h2 className="text-3xl font-bold dark:text-white mb-6">
           My Portfolio
         </h2>
+        <div className="flex justify-center space-x-4 mb-8">
+          <button
+            onClick={() => setFilter("all")}
+            className={`px-4 py-2 rounded-lg ${
+              filter === "all"
+                ? "bg-[#2c9c46] text-white"
+                : "bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-white"
+            }`}
+          >
+            All
+          </button>
+          <button
+            onClick={() => setFilter("web")}
+            className={`px-4 py-2 rounded-lg ${
+              filter === "web"
+                ? "bg-[#2c9c46] text-white"
+                : "bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-white"
+            }`}
+          >
+            Web Development
+          </button>
+          <button
+            onClick={() => setFilter("customer")}
+            className={`px-4 py-2 rounded-lg ${
+              filter === "customer"
+                ? "bg-[#2c9c46] text-white"
+                : "bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-white"
+            }`}
+          >
+            Customer Experience
+          </button>
+          <button
+            onClick={() => setFilter("tutoring")}
+            className={`px-4 py-2 rounded-lg ${
+              filter === "tutoring"
+                ? "bg-[#2c9c46] text-white"
+                : "bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-white"
+            }`}
+          >
+            Tutoring
+          </button>
+        </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 px-6">
-          {[
-            {
-              id: 1,
-              title: "Project Alpha",
-              description: "A web app for managing tasks efficiently.",
-              image: "/images/project1.jpg",
-              link: "#",
-            },
-            {
-              id: 2,
-              title: "Project Beta",
-              description: "An e-learning platform with interactive courses.",
-              image: "/images/project2.jpg",
-              link: "#",
-            },
-            {
-              id: 3,
-              title: "Project Gamma",
-              description: "A customer feedback analysis tool.",
-              image: "/images/project3.jpg",
-              link: "#",
-            },
-          ].map((project) => (
+          {filteredProjects.map((project) => (
             <div
               key={project.id}
-              className="bg-white dark:bg-gray-800 shadow-lg rounded-lg overflow-hidden transform hover:scale-105 transition-all duration-300"
+              className="bg-white dark:bg-gray-800 shadow-lg rounded-lg overflow-hidden transform hover:scale-105 transition-all duration-300 relative group"
             >
               <Image
                 src={project.image}
                 alt={project.title}
                 width={400}
                 height={250}
-                className="w-full h-48 object-cover"
+                className="w-full h-48 object-cover transform group-hover:scale-110 transition-all duration-300"
               />
+              <div className="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-center justify-center">
+                <p className="text-white text-lg font-semibold">View Details</p>
+              </div>
               <div className="p-6">
                 <h3 className="text-xl font-semibold text-gray-800 dark:text-white">
                   {project.title}
@@ -88,7 +118,7 @@ export default function Work() {
                   {project.description}
                 </p>
                 <Link
-                  href={project.link}
+                  href={`/work/${project.slug}`} // Use the project's slug for the route
                   className="mt-4 inline-block px-4 py-2 bg-[#2c9c46] text-white rounded-lg hover:bg-[#24803a] transition-all duration-300"
                 >
                   View Project
@@ -98,59 +128,6 @@ export default function Work() {
           ))}
         </div>
       </section>
-
-      {/* <section className="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 px-6 md:px-16">
-        {projects.map((project) => (
-          <div
-            key={project.title}
-            className="bg-white dark:bg-gray-800 shadow-lg rounded-lg p-6 transform transition-all hover:scale-105"
-          >
-            <div className="relative w-full h-60">
-              <Image
-                src={project.image}
-                alt={project.title}
-                layout="fill"
-                objectFit="cover"
-                className="rounded-lg"
-              />
-            </div>
-            <h3 className="text-xl font-semibold mt-4 dark:text-white">
-              {project.title}
-            </h3>
-            <p className="text-gray-600 dark:text-gray-300 mt-2">
-              {project.description}
-            </p>
-            <div className="mt-4 flex space-x-4">
-              {project.techStack.map((tech, index) => (
-                <span
-                  key={index}
-                  className="text-sm text-gray-500 dark:text-gray-300"
-                >
-                  {tech}
-                </span>
-              ))}
-            </div>
-            <div className="mt-6 flex justify-between">
-              <Link
-                href={project.liveLink}
-                passHref
-                className="text-[#2c9c46] hover:text-blue-700"
-              >
-                View Project
-              </Link>
-              {project.repoLink && (
-                <Link
-                  href={project.repoLink}
-                  passHref
-                  className="text-[#2c9c46] hover:text-blue-700"
-                >
-                  GitHub
-                </Link>
-              )}
-            </div>
-          </div>
-        ))}
-      </section> */}
 
       <section className="mb-12 mt-10 text-center">
         <h3 className="text-3xl font-semibold text-[#2c9c46] dark:text-blue-400 mb-6">
@@ -223,6 +200,21 @@ export default function Work() {
           </div>
         </div>
       </section>
+      <section className="py-16 bg-[#2c9c46] text-white text-center">
+        <h2 className="text-3xl font-bold">
+          Let’s Build Something Amazing Together!
+        </h2>
+        <p className="text-lg mt-4">
+          Whether it’s a project, collaboration, or just a chat, I’d love to
+          hear from you.
+        </p>
+        <Link
+          href="/contact"
+          className="mt-6 inline-block px-6 py-3 bg-white text-[#2c9c46] rounded-lg shadow-lg hover:bg-gray-200 transition-all duration-300"
+        >
+          Get in Touch
+        </Link>
+      </section>
       <div
         className="fixed bottom-8 right-8"
         style={{
@@ -245,6 +237,7 @@ export default function Work() {
 
 const projects = [
   {
+    id: 1,
     title: "Car Auction Platform",
     description:
       "A full-stack car auction platform with live bidding and payment integration, built with Next.js and WebSockets.",
@@ -252,8 +245,11 @@ const projects = [
     techStack: ["Next.js", "WebSocket", "Stripe", "MongoDB"],
     liveLink: "https://car-auction.com",
     repoLink: "https://github.com/yourusername/car-auction",
+    slug: "car-auction-platform",
+    category: "web",
   },
   {
+    id: 2,
     title: "Personal Finance App",
     description:
       "A personal finance management tool to track expenses, income, and budgeting, built with Next.js and MongoDB.",
@@ -261,8 +257,11 @@ const projects = [
     techStack: ["Next.js", "MongoDB", "Tailwind CSS"],
     liveLink: "https://finance-app.com",
     repoLink: "https://github.com/yourusername/finance-app",
+    slug: "personal-finance-app",
+    category: "web",
   },
   {
+    id: 3,
     title: "Event Management System",
     description:
       "A platform to manage events, RSVP, and ticketing with Next.js, designed for smooth event planning.",
@@ -270,5 +269,7 @@ const projects = [
     techStack: ["Next.js", "Firebase", "Tailwind CSS"],
     liveLink: "https://event-management.com",
     repoLink: "https://github.com/yourusername/event-management",
+    slug: "event-management-system",
+    category: "web",
   },
 ];
