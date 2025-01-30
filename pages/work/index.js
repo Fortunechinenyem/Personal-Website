@@ -118,7 +118,7 @@ export default function Work() {
                   {project.description}
                 </p>
                 <Link
-                  href={`/work/${project.slug}`} // Use the project's slug for the route
+                  href={`/work/${project.slug}`}
                   className="mt-4 inline-block px-4 py-2 bg-[#2c9c46] text-white rounded-lg hover:bg-[#24803a] transition-all duration-300"
                 >
                   View Project
@@ -241,7 +241,7 @@ const projects = [
     title: "Car Auction Platform",
     description:
       "A full-stack car auction platform with live bidding and payment integration, built with Next.js and WebSockets.",
-    image: "/images/car-auction.jpg",
+    image: "/images/hero.JPG",
     techStack: ["Next.js", "WebSocket", "Stripe", "MongoDB"],
     liveLink: "https://car-auction.com",
     repoLink: "https://github.com/yourusername/car-auction",
@@ -253,7 +253,7 @@ const projects = [
     title: "Personal Finance App",
     description:
       "A personal finance management tool to track expenses, income, and budgeting, built with Next.js and MongoDB.",
-    image: "/images/finance-app.jpg",
+    image: "/images/hero.JPG",
     techStack: ["Next.js", "MongoDB", "Tailwind CSS"],
     liveLink: "https://finance-app.com",
     repoLink: "https://github.com/yourusername/finance-app",
@@ -265,7 +265,7 @@ const projects = [
     title: "Event Management System",
     description:
       "A platform to manage events, RSVP, and ticketing with Next.js, designed for smooth event planning.",
-    image: "/images/event-management.jpg",
+    image: "/images/hero.JPG",
     techStack: ["Next.js", "Firebase", "Tailwind CSS"],
     liveLink: "https://event-management.com",
     repoLink: "https://github.com/yourusername/event-management",

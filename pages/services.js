@@ -1,14 +1,41 @@
 import Layout from "@/app/components/Layout";
 import Link from "next/link";
 import { useState, useEffect } from "react";
+
 import Slider from "react-slider";
-import { FaChalkboardTeacher, FaMicrophone, FaHandshake } from "react-icons/fa";
+import {
+  FaArrowUp,
+  FaChalkboardTeacher,
+  FaMicrophone,
+  FaHandshake,
+} from "react-icons/fa";
 import { motion } from "framer-motion";
 
 export default function Services() {
   const [consultingRate, setConsultingRate] = useState(100);
   const [isClient, setIsClient] = useState(false);
 
+  const [showButton, setShowButton] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 300) {
+        setShowButton(true);
+      } else {
+        setShowButton(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
   const handleSliderChange = (value) => {
     setConsultingRate(value);
   };
@@ -22,7 +49,7 @@ export default function Services() {
 
   return (
     <Layout>
-      <section className="relative h-[400px] flex items-center justify-center text-center bg-[url('/images/services-hero.jpg')] bg-cover bg-center">
+      <section className="relative h-[400px] flex items-center justify-center text-center bg-[url('/images/hero.JPG')] bg-cover bg-center">
         <div className="absolute inset-0 bg-[#2c9c46] "></div>
         <div className="relative text-white">
           <h1 className="text-5xl font-bold">My Services</h1>
@@ -294,6 +321,18 @@ export default function Services() {
           </div>
         </section>
       </section>
+      <div className="group fixed bottom-8 right-8">
+        <button
+          onClick={scrollToTop}
+          className="p-4 bg-[#2c9c46] text-white rounded-full shadow-lg hover:bg-[#24803a] transition-all duration-300"
+          aria-label="Back to Top"
+        >
+          <FaArrowUp className="text-xl" />
+        </button>
+        <div className="absolute bottom-14 right-0 bg-gray-800 text-white text-sm px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+          Back to Top
+        </div>
+      </div>
     </Layout>
   );
 }

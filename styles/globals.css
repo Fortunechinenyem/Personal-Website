@@ -19,7 +19,7 @@ html {
   overflow-x: hidden;
   font-family: sans-serif;
   font-weight: var(--fw-reg);
-  cursor: url("/images/cursor.png"), auto;
+  /* cursor: url("/images/cursor.png"), auto; */
 }
 :root {
   --ff-primary: "Arial, Helvetica, sans-serif";
@@ -41,9 +41,9 @@ a {
   font-family: sans-serif;
 }
 a,
-button {
+/* button {
   cursor: url("/images/cursor-pointer.png"), pointer;
-}
+} */
 .react-slider {
   position: relative;
   height: 100%;
