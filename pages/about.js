@@ -2,7 +2,7 @@ import Layout from "@/app/components/Layout";
 import { FaArrowUp } from "react-icons/fa";
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-// import { Radar } from "react-chartjs-2";
+
 import {
   Chart as ChartJS,
   RadialLinearScale,
@@ -96,7 +96,7 @@ export default function About() {
         <div className="relative text-center text-white">
           <h1 className="text-5xl font-bold">Hi, I'm Fortune</h1>
           <p className="mt-4 text-lg">
-            Developer | Tutor | Blogger | Customer Experience Pro
+            Developer | Tutor | Coach | Customer Experience Pro
           </p>
           <div className="mt-6">
             <Link
