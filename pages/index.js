@@ -116,9 +116,9 @@ export default function Home() {
             />
           </p>
           <section className="py-16 bg-white dark:bg-gray-900 text-center">
-            <h2 className="text-3xl font-bold dark:text-white mb-6">
+            {/* <h2 className="text-3xl font-bold dark:text-white mb-6">
               My Brand
-            </h2>
+            </h2> */}
             <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
               I’m passionate about creating meaningful digital experiences,
               empowering others through education, and building solutions that
