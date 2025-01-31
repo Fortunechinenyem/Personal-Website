@@ -239,6 +239,35 @@ const posts = [
       </div>
     ),
   },
+  {
+    id: 8,
+    title: "The Journey of Growth",
+    slug: "the-journey-of-growth",
+    image: "/images/pix2.jpg",
+    category: "Tech",
+    content: (
+      <div>
+        <p className="mb-4">
+          Recently, as a learning project, I decided to build a task management
+          application, wanted to know the workings of that kind of application
+          especially with its counterparts like trello, clickup and the likes.
+        </p>
+        <p className="mb-4">It has been a rewarding challenge I must say.</p>
+        <p className="mb-4">
+          From crafting a smooth user experience to implementing drag-and-drop
+          functionality with react-beautiful-dnd (this particular name got me
+          really interested 🙂 ), I’ve learned that simplicity often takes the
+          most effort. Each feature taught me more about balancing functionality
+          with usability.
+        </p>
+        <p className="mb-4">
+          Still in the process though, but it has reinforced that every bug is
+          an opportunity to grow (I have encountered aloooot 😀 ), and no detail
+          is too small when it comes to user experience.
+        </p>
+      </div>
+    ),
+  },
 ];
 
 const BlogPost = () => {

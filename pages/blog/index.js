@@ -54,6 +54,13 @@ const posts = [
     image: "/images/pix5.jpg",
     category: "Tech",
   },
+  {
+    id: 7,
+    title: "The Journey of Growth",
+    slug: "the-journey-of-growth",
+    image: "/images/pix2.jpg",
+    category: "Tech",
+  },
 ];
 
 export default function Blog() {
