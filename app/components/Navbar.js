@@ -10,6 +10,7 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
+  const currentTheme = theme === "system" ? systemTheme : theme;
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
@@ -45,10 +46,10 @@ const Navbar = () => {
 
         <div className="flex space-x-4 items-center">
           <button
-            onClick={() => setTheme(theme === "light" ? "dark" : "light")}
+            onClick={() => setTheme(currentTheme === "dark" ? "light" : "dark")}
             className="p-2 rounded-full bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-white transition-all duration-300"
           >
-            {theme === "light" ? <Moon size={20} /> : <Sun size={20} />}
+            {currentTheme === "dark" ? <Sun size={20} /> : <Moon size={20} />}
           </button>
 
           <button onClick={() => setIsOpen(!isOpen)} className="md:hidden">

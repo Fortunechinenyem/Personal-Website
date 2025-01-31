@@ -3,9 +3,64 @@ import Layout from "@/app/components/Layout";
 import { FaTwitter, FaLinkedin, FaGithub, FaInstagram } from "react-icons/fa";
 
 export default function Contact() {
-  const [email, setEmail] = useState("");
-  const [message, setMessage] = useState("");
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+
+  const [submitting, setSubmitting] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
+  const [error, setError] = useState("");
+  const [email, setEmail] = useState(""); // For newsletter subscription
   const [loading, setLoading] = useState(false);
+  const [message, setMessage] = useState("");
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prevFormData) => ({
+      ...prevFormData,
+      [name]: value,
+    }));
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setSubmitting(true);
+    setError("");
+
+    console.log("Form Data before submission:", formData); // Debugging step
+
+    // Ensure all fields have values
+    if (!formData.name || !formData.email || !formData.message) {
+      setError("All fields are required");
+      setSubmitting(false);
+      return;
+    }
+
+    try {
+      const response = await fetch("/api/sendEmail", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const result = await response.json();
+      if (response.ok) {
+        setFormData({ name: "", email: "", message: "" });
+        setSubmitted(true);
+      } else {
+        setError(result.message || "Failed to send message.");
+      }
+    } catch (error) {
+      setError("An unexpected error occurred. Please try again.");
+      console.error("Error:", error);
+    } finally {
+      setSubmitting(false);
+    }
+  };
 
   const handleSubscribe = async (e) => {
     e.preventDefault();
@@ -37,37 +92,50 @@ export default function Contact() {
 
   return (
     <Layout>
-      <section className="py-16 bg-gray-100 dark:bg-gray-800 text-center">
+      <section className="py-20 mt-10 bg-gray-100 dark:bg-gray-800 text-center">
         <h2 className="text-3xl font-bold dark:text-white mb-6">Contact Me</h2>
 
-        <form className="max-w-lg mx-auto px-6">
+        <form
+          onSubmit={handleSubmit}
+          className="bg-white p-6 rounded-lg shadow-md"
+        >
           <div className="mb-4">
             <input
               type="text"
+              name="name"
               placeholder="Your Name"
-              className="w-full px-4 py-2 rounded-lg focus:outline-none"
+              className="w-full p-2 border rounded-md"
+              onChange={handleChange}
+              value={formData.name}
             />
           </div>
           <div className="mb-4">
             <input
               type="email"
+              name="email"
               placeholder="Your Email"
-              className="w-full px-4 py-2 rounded-lg focus:outline-none"
+              className="w-full p-2 border rounded-md"
+              onChange={handleChange}
+              value={formData.email}
             />
           </div>
           <div className="mb-4">
             <textarea
+              name="message"
               placeholder="Your Message"
-              rows="4"
-              className="w-full px-4 py-2 rounded-lg focus:outline-none"
-            ></textarea>
+              className="w-full p-2 border rounded-md"
+              onChange={handleChange}
+              value={formData.message}
+            />
           </div>
           <button
             type="submit"
-            className="px-6 py-3 bg-[#2c9c46] text-white rounded-lg shadow-lg hover:bg-[#24803a] transition-all duration-300"
+            className="w-full sm:w-auto px-6 py-2 bg-[#2c9c46] text-white rounded-lg sm:rounded-r-lg hover:bg-gray-200 transition-all duration-300"
+            disabled={submitting}
           >
-            Send Message
+            {submitting ? "Sending..." : "Send Message"}
           </button>
+          {error && <p className="text-red-500 mt-2">{error}</p>}
         </form>
       </section>
 
@@ -111,6 +179,7 @@ export default function Contact() {
             </a>
           </div>
         </div>
+
         <section className="py-16 px-6 mt-7 bg-[#2c9c46] text-white text-center">
           <div className="max-w-2xl mx-auto">
             <h2 className="text-2xl sm:text-3xl font-bold">Stay Updated</h2>
