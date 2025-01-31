@@ -93,7 +93,7 @@ export default function Home() {
   };
   return (
     <Layout>
-      <section className=" bg-gradient-to-b from-[#8dd9c5] to-[#267963] flex flex-col md:flex-row items-center justify-center min-h-screen text-center md:text-left mt-16 px-6">
+      <section className=" bg-gradient-to-b from-[#e8f2f0] to-[#2c9c46] flex flex-col md:flex-row items-center justify-center min-h-screen text-center md:text-left mt-16 px-6">
         <div className="w-full md:w-1/2">
           <h1 className="text-5xl font-extrabold dark:text-white animate__animated animate__fadeIn animate__delay-1s">
             Hi, I'm <span className="text-[#2c9c46]">Fortune</span>
@@ -128,7 +128,7 @@ export default function Home() {
           <div className="mt-6 flex justify-center md:justify-start space-x-4 animate__animated animate__fadeIn animate__delay-3s">
             <Link
               href="/work"
-              className="px-6 py-3 bg-[#2c9c46] text-white rounded-lg shadow-lg hover:bg-blue-700 transition-all duration-300"
+              className="px-6 py-3 bg-white text-[#2c9c46] rounded-lg shadow-lg hover:bg-blue-700 transition-all duration-300"
             >
               Explore My Work
             </Link>
