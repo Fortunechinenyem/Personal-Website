@@ -16,7 +16,30 @@ import { TypeAnimation } from "react-type-animation";
 
 export default function Home() {
   const [showButton, setShowButton] = useState(false);
-
+  const expertiseList = [
+    {
+      icon: <FaCode className="text-4xl text-[#2c9c46]" />,
+      title: "Software Development",
+      description: "Building innovative and efficient software solutions.",
+    },
+    {
+      icon: <FaPen className="text-4xl text-[#2c9c46]" />,
+      title: "Coaching",
+      description:
+        "Providing insights and guidance to help individuals navigate life.",
+    },
+    {
+      icon: <FaHeadset className="text-4xl text-[#2c9c46]" />,
+      title: "Customer Experience",
+      description:
+        "Enhancing user experience through great support and feedback.",
+    },
+    {
+      icon: <FaUserGraduate className="text-4xl text-[#2c9c46]" />,
+      title: "Tutoring",
+      description: "Helping others grow through personalized mentoring.",
+    },
+  ];
   const settings = {
     dots: true,
     infinite: true,
@@ -128,48 +151,25 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="py-16 bg-gray-100 dark:bg-gray-800 text-center">
-        <h2 className="text-3xl font-bold dark:text-white mb-6">
+      <section className="py-16 px-6 md:px-12 bg-gray-100 dark:bg-gray-800 text-center">
+        <h2 className="text-3xl font-bold dark:text-white mb-8">
           My Expertise
         </h2>
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-          <div className="flex flex-col items-center space-y-4 p-6 bg-white dark:bg-gray-700 rounded-lg shadow-md hover:shadow-xl transition-all duration-300">
-            <FaCode className="text-4xl text-[#2c9c46]" />
-            <h3 className="text-xl font-semibold text-gray-800 dark:text-white">
-              Software Development
-            </h3>
-            <p className="text-gray-600 dark:text-gray-300">
-              Building innovative and efficient software solutions.
-            </p>
-          </div>
-          <div className="flex flex-col items-center space-y-4 p-6 bg-white dark:bg-gray-700 rounded-lg shadow-md hover:shadow-xl transition-all duration-300">
-            <FaPen className="text-4xl text-[#2c9c46]" />
-            <h3 className="text-xl font-semibold text-gray-800 dark:text-white">
-              Coaching
-            </h3>
-            <p className="text-gray-600 dark:text-gray-300">
-              I help to give insights, help people navigate various aspects of
-              life.
-            </p>
-          </div>
-          <div className="flex flex-col items-center space-y-4 p-6 bg-white dark:bg-gray-700 rounded-lg shadow-md hover:shadow-xl transition-all duration-300">
-            <FaHeadset className="text-4xl text-[#2c9c46]" />
-            <h3 className="text-xl font-semibold text-gray-800 dark:text-white">
-              Customer Experience
-            </h3>
-            <p className="text-gray-600 dark:text-gray-300">
-              Enhancing user experience with great support and feedback.
-            </p>
-          </div>
-          <div className="flex flex-col items-center space-y-4 p-6 bg-white dark:bg-gray-700 rounded-lg shadow-md hover:shadow-xl transition-all duration-300">
-            <FaUserGraduate className="text-4xl text-[#2c9c46]" />
-            <h3 className="text-xl font-semibold text-gray-800 dark:text-white">
-              Tutoring
-            </h3>
-            <p className="text-gray-600 dark:text-gray-300">
-              Helping others grow through personalized mentoring.
-            </p>
-          </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+          {expertiseList.map((item, index) => (
+            <div
+              key={index}
+              className="flex flex-col items-center space-y-4 p-6 bg-white dark:bg-gray-700 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 transform hover:scale-105"
+            >
+              {item.icon}
+              <h3 className="text-xl font-semibold text-gray-800 dark:text-white">
+                {item.title}
+              </h3>
+              <p className="text-gray-600 dark:text-gray-300 text-sm sm:text-base">
+                {item.description}
+              </p>
+            </div>
+          ))}
         </div>
       </section>
 

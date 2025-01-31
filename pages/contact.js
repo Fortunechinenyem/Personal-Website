@@ -111,31 +111,35 @@ export default function Contact() {
             </a>
           </div>
         </div>
-
-        <section className="py-16 mt-7 bg-[#2c9c46] text-white text-center">
-          <h2 className="text-3xl font-bold">Stay Updated</h2>
-          <p className="text-lg text-center dark:text-gray-300 mt-4">
-            Sign up for my newsletter to receive the latest insights, updates,
-            and tips in tech, career, and more.
-          </p>
-          <form onSubmit={handleSubscribe} className="mt-6 flex justify-center">
-            <input
-              type="email"
-              placeholder="Your email"
-              className="px-4 py-2 rounded-l-lg focus:outline-none text-gray-800"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              required
-            />
-            <button
-              type="submit"
-              className="px-6 py-2 bg-white text-[#2c9c46] rounded-r-lg hover:bg-gray-200 transition-all duration-300"
-              disabled={loading}
+        <section className="py-16 px-6 mt-7 bg-[#2c9c46] text-white text-center">
+          <div className="max-w-2xl mx-auto">
+            <h2 className="text-2xl sm:text-3xl font-bold">Stay Updated</h2>
+            <p className="text-base sm:text-lg text-center dark:text-gray-300 mt-4">
+              Sign up for my newsletter to receive the latest insights, updates,
+              and tips in tech, career, and more.
+            </p>
+            <form
+              onSubmit={handleSubscribe}
+              className="mt-6 flex flex-col sm:flex-row items-center justify-center gap-3"
             >
-              {loading ? "Subscribing..." : "Subscribe"}
-            </button>
-          </form>
-          {message && <p className="mt-4">{message}</p>}
+              <input
+                type="email"
+                placeholder="Your email"
+                className="w-full sm:w-auto px-4 py-2 rounded-lg sm:rounded-l-lg focus:outline-none text-gray-800"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
+              />
+              <button
+                type="submit"
+                className="w-full sm:w-auto px-6 py-2 bg-white text-[#2c9c46] rounded-lg sm:rounded-r-lg hover:bg-gray-200 transition-all duration-300"
+                disabled={loading}
+              >
+                {loading ? "Subscribing..." : "Subscribe"}
+              </button>
+            </form>
+            {message && <p className="mt-4">{message}</p>}
+          </div>
         </section>
       </section>
     </Layout>
