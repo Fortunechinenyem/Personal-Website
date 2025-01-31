@@ -48,7 +48,7 @@ export default function Work() {
           modern technologies and thoughtful design.
         </p>
       </section>
-      <section className="py-16 bg-white dark:bg-gray-900 text-center">
+      <section className="mt-7 py-16 bg-white dark:bg-gray-900 text-center">
         <h2 className="text-3xl font-bold dark:text-white mb-6">
           My Portfolio
         </h2>

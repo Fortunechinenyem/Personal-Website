@@ -98,7 +98,7 @@ export default function Home() {
           <h1 className="text-5xl font-extrabold dark:text-white animate__animated animate__fadeIn animate__delay-1s">
             Hi, I'm <span className="text-[#2c9c46]">Fortune</span>
           </h1>
-          <p className="text-lg text-gray-600 dark:text-gray-300 mt-4 animate__animated animate__fadeIn animate__delay-2s">
+          <p className="mb-7 text-lg text-gray-600 dark:text-gray-300 mt-4 animate__animated animate__fadeIn animate__delay-2s">
             <TypeAnimation
               sequence={[
                 "Developer",
