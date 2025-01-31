@@ -2,7 +2,7 @@ import Layout from "@/app/components/Layout";
 import { FaArrowUp } from "react-icons/fa";
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Radar } from "react-chartjs-2";
+// import { Radar } from "react-chartjs-2";
 import {
   Chart as ChartJS,
   RadialLinearScale,
@@ -193,22 +193,25 @@ export default function About() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 px-6">
           {[
             {
-              name: "Jane Doe",
-              role: "Student",
+              id: 1,
+              name: "Ejurah",
+              role: "Mentee",
               testimonial:
-                "Fortune's tutoring helped me land my first tech job. Highly recommend!",
+                "Fortune's mentorship transformed my career! Her guidance is invaluable and her insights are spot on.",
             },
             {
-              name: "John Smith",
+              id: 2,
+              name: "Mr Stanley",
               role: "Client",
               testimonial:
-                "The consulting services were top-notch. Our business processes have improved significantly.",
+                "The customer experience services provided by Fortune were exceptional. She goes above and beyond to meet your needs.",
             },
             {
-              name: "Emily White",
-              role: "Event Organizer",
+              id: 3,
+              name: "Chibueze",
+              role: "Colleague",
               testimonial:
-                "Fortune's speaking engagement was the highlight of our event. Engaging and insightful!",
+                "Working with Fortune has been a pleasure. She’s a true professional with a wealth of knowledge and a generous spirit.",
             },
           ].map((testimonial, index) => (
             <motion.div
@@ -296,7 +299,7 @@ const expertise = [
     icon: "🎤",
   },
   {
-    title: "Work-Life Balance",
+    title: "Caoching",
     description:
       "Navigating tech, family, and personal growth with purpose and passion.",
     icon: "❤️",

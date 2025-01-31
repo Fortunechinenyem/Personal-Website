@@ -268,22 +268,25 @@ export default function Services() {
           <div className="mt-12 grid md:grid-cols-3 gap-6">
             {[
               {
-                name: "Jane Doe",
-                role: "Student",
+                id: 1,
+                name: "Ejurah",
+                role: "Mentee",
                 testimonial:
-                  "Fortune's tutoring helped me land my first tech job. Highly recommend!",
+                  "Fortune's mentorship transformed my career! Her guidance is invaluable and her insights are spot on.",
               },
               {
-                name: "John Smith",
+                id: 2,
+                name: "Mr Stanley",
                 role: "Client",
                 testimonial:
-                  "The consulting services were top-notch. Our business processes have improved significantly.",
+                  "The customer experience services provided by Fortune were exceptional. She goes above and beyond to meet your needs.",
               },
               {
-                name: "Emily White",
-                role: "Event Organizer",
+                id: 3,
+                name: "Chibueze",
+                role: "Colleague",
                 testimonial:
-                  "Fortune's speaking engagement was the highlight of our event. Engaging and insightful!",
+                  "Working with Fortune has been a pleasure. She’s a true professional with a wealth of knowledge and a generous spirit.",
               },
             ].map((testimonial, index) => (
               <motion.div

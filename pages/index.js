@@ -29,21 +29,21 @@ export default function Home() {
   const testimonials = [
     {
       id: 1,
-      name: "Jane Doe",
+      name: "Ejurah",
       role: "Mentee",
       testimonial:
         "Fortune's mentorship transformed my career! Her guidance is invaluable and her insights are spot on.",
     },
     {
       id: 2,
-      name: "John Smith",
+      name: "Mr Stanley",
       role: "Client",
       testimonial:
         "The customer experience services provided by Fortune were exceptional. She goes above and beyond to meet your needs.",
     },
     {
       id: 3,
-      name: "Emily White",
+      name: "Chibueze",
       role: "Colleague",
       testimonial:
         "Working with Fortune has been a pleasure. She’s a true professional with a wealth of knowledge and a generous spirit.",
@@ -82,7 +82,7 @@ export default function Home() {
                 1000,
                 "Tutor",
                 1000,
-                "Blogger",
+                "Coach",
                 1000,
                 "Customer Experience Pro",
                 1000,
@@ -99,7 +99,7 @@ export default function Home() {
             <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
               I’m passionate about creating meaningful digital experiences,
               empowering others through education, and building solutions that
-              make a difference. Let’s innovate together!
+              make a difference.
             </p>
           </section>
           <div className="mt-6 flex justify-center md:justify-start space-x-4 animate__animated animate__fadeIn animate__delay-3s">
@@ -151,10 +151,11 @@ export default function Home() {
           <div className="flex flex-col items-center space-y-4">
             <FaPen className="text-4xl text-[#2c9c46]" />
             <h3 className="text-xl font-semibold text-gray-800 dark:text-white">
-              Blogging
+              Coaching
             </h3>
             <p className="text-gray-600 dark:text-gray-300">
-              Sharing my thoughts and insights on tech and life.
+              I help to give insights, help people navigate various aspects of
+              life.
             </p>
           </div>
           <div className="flex flex-col items-center space-y-4">
@@ -199,7 +200,7 @@ export default function Home() {
           {[
             {
               id: 1,
-              title: "10 Tips for Aspiring Developers",
+              title: "How I transitoned to Tech",
               excerpt: "Learn how to kickstart your coding journey.",
               link: "#",
             },
@@ -211,8 +212,8 @@ export default function Home() {
             },
             {
               id: 3,
-              title: "Why Mentorship Matters",
-              excerpt: "The impact of mentorship on personal growth.",
+              title: "Mental Health",
+              excerpt: "The impact of mental health on overall wellbeing",
               link: "#",
             },
           ].map((post) => (

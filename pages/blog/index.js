@@ -7,30 +7,30 @@ import { FaArrowUp } from "react-icons/fa";
 const posts = [
   {
     id: 1,
-    title: "My Journey in Tech",
+    title: "How I transitioned to Tech",
     slug: "journey-in-tech",
-    image: "/images/blog1.jpg",
+    image: "/images/pix1.jpg",
     category: "Tech",
   },
   {
     id: 2,
     title: "Balancing Motherhood & Career",
     slug: "motherhood-and-career",
-    image: "/images/blog2.jpg",
+    image: "/images/pix2.jpg",
     category: "Parenting",
   },
   {
     id: 3,
     title: "The Future of Work in Tech",
     slug: "future-of-work-in-tech",
-    image: "/images/blog3.jpg",
+    image: "/images/pix7.jpg",
     category: "Tech",
   },
   {
     id: 4,
-    title: "Work-Life Balance Tips",
+    title: "Mental Health",
     slug: "work-life-balance-tips",
-    image: "/images/blog4.jpg",
+    image: "/images/pix3.jpg",
     category: "Lifestyle",
   },
 ];
@@ -106,8 +106,8 @@ export default function Blog() {
               <Image
                 src={post.image}
                 alt={post.title}
-                height={100}
-                width={100}
+                height={350}
+                width={350}
                 className="w-full h-40 object-cover rounded-md"
               />
               <h3 className="text-xl font-semibold mt-4 dark:text-white">

@@ -1,35 +1,36 @@
 import Layout from "@/app/components/Layout";
 import { useRouter } from "next/router";
 import Link from "next/link";
+import Image from "next/image";
 
 const posts = [
   {
     id: 1,
-    title: "My Journey in Tech",
+    title: "How I transitioned to Tech",
     slug: "journey-in-tech",
+    image: "/images/pix1.jpg",
     category: "Tech",
-    content: "Content for Journey in Tech",
   },
   {
     id: 2,
     title: "Balancing Motherhood & Career",
     slug: "motherhood-and-career",
+    image: "/images/pix2.jpg",
     category: "Parenting",
-    content: "Content for Motherhood and Career",
   },
   {
     id: 3,
     title: "The Future of Work in Tech",
     slug: "future-of-work-in-tech",
+    image: "/images/pix7.jpg",
     category: "Tech",
-    content: "Content for Future of Work in Tech",
   },
   {
     id: 4,
-    title: "Work-Life Balance Tips",
+    title: "Mental Health",
     slug: "work-life-balance-tips",
+    image: "/images/pix3.jpg",
     category: "Lifestyle",
-    content: "Content for Work-Life Balance Tips",
   },
 ];
 
@@ -63,6 +64,13 @@ const BlogPost = () => {
     <Layout>
       <section className="mt-20">
         <h2 className="text-3xl font-bold capitalize">{post.title}</h2>
+        <Image
+          src={post.image}
+          alt={post.title}
+          height={350}
+          width={350}
+          className="w-full h-40 object-cover rounded-md"
+        />
         <p className="text-gray-600 mt-2">{post.content}</p>
 
         <div className="mt-6">
