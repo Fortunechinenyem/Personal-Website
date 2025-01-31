@@ -93,7 +93,7 @@ export default function Home() {
   };
   return (
     <Layout>
-      <section className="flex flex-col md:flex-row items-center justify-center min-h-screen text-center md:text-left mt-16 px-6">
+      <section className=" bg-gradient-to-b from-[#8dd9c5] to-[#267963] flex flex-col md:flex-row items-center justify-center min-h-screen text-center md:text-left mt-16 px-6">
         <div className="w-full md:w-1/2">
           <h1 className="text-5xl font-extrabold dark:text-white animate__animated animate__fadeIn animate__delay-1s">
             Hi, I'm <span className="text-[#2c9c46]">Fortune</span>
