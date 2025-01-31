@@ -1,11 +1,45 @@
+import { useState } from "react";
 import Layout from "@/app/components/Layout";
 import { FaTwitter, FaLinkedin, FaGithub, FaInstagram } from "react-icons/fa";
 
 export default function Contact() {
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+  const [loading, setLoading] = useState(false);
+
+  const handleSubscribe = async (e) => {
+    e.preventDefault();
+    setLoading(true);
+    setMessage("");
+
+    try {
+      const response = await fetch("/api/subscribe", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email }),
+      });
+
+      const data = await response.json();
+      if (response.ok) {
+        setMessage("Subscription successful! Check your inbox.");
+        setEmail("");
+      } else {
+        setMessage(data.error || "Something went wrong. Try again.");
+      }
+    } catch (error) {
+      setMessage("Error: Unable to subscribe. Try again later.");
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return (
     <Layout>
       <section className="py-16 bg-gray-100 dark:bg-gray-800 text-center">
         <h2 className="text-3xl font-bold dark:text-white mb-6">Contact Me</h2>
+
         <form className="max-w-lg mx-auto px-6">
           <div className="mb-4">
             <input
@@ -36,6 +70,7 @@ export default function Contact() {
           </button>
         </form>
       </section>
+
       <section className="mt-20 text-center px-4">
         <div className="mt-12">
           <p className="text-lg text-gray-600 dark:text-gray-300 mb-4">
@@ -43,7 +78,7 @@ export default function Contact() {
           </p>
           <div className="flex justify-center space-x-6 text-2xl">
             <a
-              href="https://twitter.com/yourprofile"
+              href="https://x.com/FortuneChineny1"
               target="_blank"
               rel="noopener noreferrer"
               className="text-blue-500 hover:text-blue-700 transition duration-300"
@@ -51,7 +86,7 @@ export default function Contact() {
               <FaTwitter />
             </a>
             <a
-              href="https://www.linkedin.com/in/yourprofile"
+              href="https://www.linkedin.com/in/fortune-chinenyem-aribido-6578b8185/"
               target="_blank"
               rel="noopener noreferrer"
               className="text-blue-700 hover:text-blue-900 transition duration-300"
@@ -59,7 +94,7 @@ export default function Contact() {
               <FaLinkedin />
             </a>
             <a
-              href="https://github.com/yourprofile"
+              href="https://github.com/Fortunechinenyem"
               target="_blank"
               rel="noopener noreferrer"
               className="text-gray-900 hover:text-gray-700 transition duration-300"
@@ -67,7 +102,7 @@ export default function Contact() {
               <FaGithub />
             </a>
             <a
-              href="https://www.instagram.com/yourprofile"
+              href="https://www.instagram.com/fortunatechie?igsh=bXc2a3pnMm55ZWl3"
               target="_blank"
               rel="noopener noreferrer"
               className="text-pink-500 hover:text-pink-700 transition duration-300"
@@ -76,25 +111,31 @@ export default function Contact() {
             </a>
           </div>
         </div>
+
         <section className="py-16 mt-7 bg-[#2c9c46] text-white text-center">
           <h2 className="text-3xl font-bold">Stay Updated</h2>
-          <p className="text-lg text-center  dark:text-gray-300 mt-4">
+          <p className="text-lg text-center dark:text-gray-300 mt-4">
             Sign up for my newsletter to receive the latest insights, updates,
             and tips in tech, career, and more.
           </p>
-          <form className="mt-6 flex justify-center">
+          <form onSubmit={handleSubscribe} className="mt-6 flex justify-center">
             <input
               type="email"
               placeholder="Your email"
               className="px-4 py-2 rounded-l-lg focus:outline-none text-gray-800"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
             />
             <button
               type="submit"
               className="px-6 py-2 bg-white text-[#2c9c46] rounded-r-lg hover:bg-gray-200 transition-all duration-300"
+              disabled={loading}
             >
-              Subscribe
+              {loading ? "Subscribing..." : "Subscribe"}
             </button>
           </form>
+          {message && <p className="mt-4">{message}</p>}
         </section>
       </section>
     </Layout>

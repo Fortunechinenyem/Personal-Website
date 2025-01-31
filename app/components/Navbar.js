@@ -13,7 +13,7 @@ const Navbar = () => {
     <nav className="bg-white dark:bg-gray-900 fixed w-full z-10 shadow-md">
       <div className="container mx-auto flex justify-between items-center p-4">
         <Link href="/" className="text-2xl font-bold dark:text-white">
-          <Image src={Logo} width={100} height={100} alt="logo" priority />
+          <Image src={Logo} width={100} height={100} alt="" priority />
         </Link>
 
         <div className="hidden md:flex space-x-6">

@@ -11,6 +11,51 @@ import {
 } from "react-icons/fa";
 import { motion } from "framer-motion";
 
+const pricingPlans = [
+  {
+    title: "Basic",
+    price: "$50",
+    features: [
+      "1-hour consultation session",
+      "Personalized feedback on your project or career goals",
+      "Email support for 7 days",
+      "Guidance on coding best practices",
+      "Customer service strategy tips",
+      "Tutoring on a specific tech topic (e.g., JavaScript, React)",
+      "Career coaching session (30 mins)",
+    ],
+  },
+  {
+    title: "Standard",
+    price: "$150",
+    features: [
+      "3-hour consultation session",
+      "Personalized feedback on your project or career goals",
+      "Email & chat support for 14 days",
+      "Code review and optimization tips",
+      "Customer service process improvement strategies",
+      "Tutoring on multiple tech topics (e.g., JavaScript, React, Node.js)",
+      "Career coaching session (1 hour)",
+      "Access to exclusive resources (e.g., templates, guides)",
+    ],
+  },
+  {
+    title: "Premium",
+    price: "$300",
+    features: [
+      "6-hour consultation session",
+      "Personalized feedback on your project or career goals",
+      "24/7 priority support for 30 days",
+      "End-to-end project guidance (planning, development, deployment)",
+      "Customer service team training and process optimization",
+      "Comprehensive tutoring on advanced tech topics (e.g., full-stack development, APIs)",
+      "Career coaching sessions (2 hours total)",
+      "Access to exclusive resources (e.g., templates, guides, video tutorials)",
+      "Lifetime access to a private Slack community for ongoing support",
+    ],
+  },
+];
+
 export default function Services() {
   const [consultingRate, setConsultingRate] = useState(100);
   const [isClient, setIsClient] = useState(false);
@@ -49,8 +94,8 @@ export default function Services() {
 
   return (
     <Layout>
-      <section className="relative h-[400px] flex items-center justify-center text-center bg-[url('/images/hero.JPG')] bg-cover bg-center">
-        <div className="absolute inset-0 bg-[#2c9c46] "></div>
+      <section className="relative h-[400px] flex items-center justify-center text-center bg-[url('/images/pix7.jpg')] bg-cover bg-center">
+        <div className="absolute inset-0 bg-gray-500 opacity-50"></div>
         <div className="relative text-white">
           <h1 className="text-5xl font-bold">My Services</h1>
           <p className="mt-4 text-lg">
@@ -196,36 +241,8 @@ export default function Services() {
           <p className="text-lg text-gray-600 dark:text-gray-300 mt-4">
             Choose a plan that suits your needs and budget.
           </p>
-          <div className="mt-12 grid md:grid-cols-3 gap-6">
-            {[
-              {
-                title: "Basic",
-                price: "$100",
-                features: [
-                  "1-hour session",
-                  "Personalized feedback",
-                  "Email support",
-                ],
-              },
-              {
-                title: "Standard",
-                price: "$250",
-                features: [
-                  "3-hour session",
-                  "Personalized feedback",
-                  "Email & chat support",
-                ],
-              },
-              {
-                title: "Premium",
-                price: "$500",
-                features: [
-                  "6-hour session",
-                  "Personalized feedback",
-                  "24/7 priority support",
-                ],
-              },
-            ].map((plan, index) => (
+          <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8">
+            {pricingPlans.map((plan, index) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 50 }}
@@ -233,26 +250,27 @@ export default function Services() {
                 transition={{ duration: 0.5, delay: index * 0.2 }}
                 className="bg-white dark:bg-gray-800 shadow-lg rounded-lg p-6"
               >
-                <h3 className="text-2xl font-semibold dark:text-white">
+                <h3 className="text-2xl font-semibold text-center dark:text-white">
                   {plan.title}
                 </h3>
-                <p className="text-4xl font-bold text-[#2c9c46] mt-4">
+                <p className="text-4xl font-bold text-[#2c9c46] text-center mt-4">
                   {plan.price}
                 </p>
                 <ul className="mt-6 space-y-2">
                   {plan.features.map((feature, i) => (
-                    <li key={i} className="text-gray-600 dark:text-gray-300">
+                    <li
+                      key={i}
+                      className="text-gray-600 dark:text-gray-300 flex items-center"
+                    >
+                      <span className="mr-2">✔️</span>
                       {feature}
                     </li>
                   ))}
                 </ul>
                 <div className="mt-6 text-center">
-                  <Link
-                    href="/contact"
-                    className="px-6 py-3 bg-[#2c9c46] text-white rounded-lg hover:bg-[#24803a] transition-all duration-300"
-                  >
+                  <button className="px-6 py-3 bg-[#2c9c46] text-white rounded-lg hover:bg-[#24803a] transition-all duration-300">
                     Choose Plan
-                  </Link>
+                  </button>
                 </div>
               </motion.div>
             ))}
