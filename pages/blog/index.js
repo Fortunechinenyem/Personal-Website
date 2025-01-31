@@ -10,7 +10,7 @@ const posts = [
     title: "How I transitioned to Tech",
     slug: "journey-in-tech",
     image: "/images/pix1.jpg",
-    category: "Tech",
+    category: "Career",
   },
   {
     id: 2,
@@ -32,6 +32,27 @@ const posts = [
     slug: "work-life-balance-tips",
     image: "/images/pix3.jpg",
     category: "Lifestyle",
+  },
+  {
+    id: 5,
+    title: "Curiosity from the Eyes of A Child",
+    slug: "curiosity-from-the-eyes-of-a-child",
+    image: "/images/pix4.jpg",
+    category: "Parenting",
+  },
+  {
+    id: 6,
+    title: "Firebase and MongoDB",
+    slug: "firebase-and-mongodb",
+    image: "/images/pix1.jpg",
+    category: "Tech",
+  },
+  {
+    id: 7,
+    title: "Projects to Try as a Dev",
+    slug: "projects-to-try-as-a-dev",
+    image: "/images/pix5.jpg",
+    category: "Tech",
   },
 ];
 

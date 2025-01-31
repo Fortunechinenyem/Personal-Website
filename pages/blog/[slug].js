@@ -133,6 +133,112 @@ const posts = [
       </div>
     ),
   },
+  {
+    id: 5,
+    title: "Curiosity from the Eyes of A Child",
+    slug: "curiosity-from-the-eyes-of-a-child",
+    image: "/images/pix4.jpg",
+    category: "Parenting",
+    content: (
+      <div>
+        <p className="mb-4">
+          I truly admire the inquisitive nature of children.
+        </p>
+        <p className="mb-4">
+          Their constant curiosity (of course, this can be tiring if we're being
+          honest 😁) not only fuels their learning but also sparks innovation.
+        </p>
+        <p className="mb-4">
+          I’m learning a lot from this mindset—by embracing curiosity in my
+          work, I open myself to new ideas, explore uncharted territories, and
+          foster continuous growth.
+        </p>
+        <p className="mb-4">
+          This disposition challenges me to never stop asking questions,
+          challenging assumptions, and seeking deeper understanding in both my
+          personal and professional life.
+        </p>
+        <p className="mb-4">I do hope you ask those questions.... 🙂</p>
+      </div>
+    ),
+  },
+  {
+    id: 6,
+    title: "Firebase and MongoDB",
+    slug: "firebase-and-mongodb",
+    image: "/images/pix1.jpg",
+    category: "Tech",
+    content: (
+      <div>
+        <p className="mb-4">
+          Having worked with MongoDB and Firebase, I'm tempted to make certain
+          comparisons 😀. I had always used Mongodb and was very comfortable
+          with it that I didn't really bother about firebase until recently... I
+          practically saw the light! 😁
+        </p>
+        <p className="mb-4">
+          With MongoDB, I learned the power of flexible schema design and how it
+          makes scaling applications a breeze. It’s perfect for handling large,
+          unstructured data sets with ease.
+        </p>
+        <p className="mb-4">
+          On the Firebase side, it’s all about rapid development with integrated
+          tools like Firestore, Authentication, and Hosting. I’ve seen how
+          Firebase streamlines the backend, making real-time features and user
+          management seamless.
+        </p>
+        <p className="mb-4">
+          Each tool brought its own value to the table, and it’s amazing how
+          they’ve helped me build scalable, dynamic apps in no time.
+        </p>
+        <p className="mb-4">I'd be more open minded 🙂 .</p>
+      </div>
+    ),
+  },
+  {
+    id: 7,
+    title: "Projects to Try as a Dev",
+    slug: "projects-to-try-as-a-dev",
+    image: "/images/pix5.jpg",
+    category: "Tech",
+    content: (
+      <div>
+        <p className="mb-4">
+          This year, we're committing to growth by building systems and
+          structures that push us to new heights (Insert the " na me get this
+          year" song 😁 ).
+        </p>
+        <p className="mb-4">
+          A while back, I came across a tweet advocating for developers to level
+          up by mastering the basics through impactful projects. I couldn't
+          agree more!
+        </p>
+        <p className="mb-4">
+          Here's a curated list of projects that are not just practical but will
+          also elevate your skills and they are not limited to:
+        </p>
+        <p className="mb-4">
+          E-commerce Platform, Personal Finance Management App, Social Media
+          Dashboard, Real-Time Chat Application, Blog Platform with Markdown
+          Support, Task Management Tool (Kanban), Fitness Tracking App
+          ,Portfolio Website with CMS Integration, Recipe App Event Management
+          System, Custom CMS (Content Management System), Weather Dashboard
+          ,Learning Management System (LMS) ,AI-Powered Chatbot, URL Shortener
+          ,Stock Market Tracker, Online Learning Platform ,Collaborative
+          Document Editor, Job Board Platform, Custom CRM (Customer Relationship
+          Management) System.
+        </p>
+        <p className="mb-4">
+          These projects are like mini career gyms—each one exercises a
+          different part of your developer skill set (especially the bugs 😁)
+        </p>
+        <p className="mb-4">
+          So, no mediocrity this year—we refuse to settle! It's personal
+          development season, and we're going all in.{" "}
+        </p>
+      </div>
+    ),
+  },
 ];
 
 const BlogPost = () => {
