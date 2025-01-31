@@ -141,14 +141,8 @@ export default function Home() {
             <p className="text-gray-600 dark:text-gray-300">
               Building innovative and efficient software solutions.
             </p>
-            <div className="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-600">
-              <div
-                className="bg-[#2c9c46] h-2.5 rounded-full"
-                style={{ width: "90%" }}
-              ></div>
-            </div>
           </div>
-          <div className="flex flex-col items-center space-y-4">
+          <div className="flex flex-col items-center space-y-4 p-6 bg-white dark:bg-gray-700 rounded-lg shadow-md hover:shadow-xl transition-all duration-300">
             <FaPen className="text-4xl text-[#2c9c46]" />
             <h3 className="text-xl font-semibold text-gray-800 dark:text-white">
               Coaching
@@ -158,7 +152,7 @@ export default function Home() {
               life.
             </p>
           </div>
-          <div className="flex flex-col items-center space-y-4">
+          <div className="flex flex-col items-center space-y-4 p-6 bg-white dark:bg-gray-700 rounded-lg shadow-md hover:shadow-xl transition-all duration-300">
             <FaHeadset className="text-4xl text-[#2c9c46]" />
             <h3 className="text-xl font-semibold text-gray-800 dark:text-white">
               Customer Experience
@@ -167,7 +161,7 @@ export default function Home() {
               Enhancing user experience with great support and feedback.
             </p>
           </div>
-          <div className="flex flex-col items-center space-y-4">
+          <div className="flex flex-col items-center space-y-4 p-6 bg-white dark:bg-gray-700 rounded-lg shadow-md hover:shadow-xl transition-all duration-300">
             <FaUserGraduate className="text-4xl text-[#2c9c46]" />
             <h3 className="text-xl font-semibold text-gray-800 dark:text-white">
               Tutoring

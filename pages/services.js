@@ -128,7 +128,7 @@ export default function Services() {
               <div className="mt-6 text-center">
                 <Link
                   href="#contact"
-                  className="px-6 py-3 bg-[#2c9c46] text-white rounded-lg hover:bg-[#24803a] transition-all duration-300"
+                  className="mt-6 inline-block px-5 py-2 text-sm sm:text-base bg-[#2c9c46] text-white rounded-md shadow-md hover:bg-gray-200 transition-all duration-300 max-w-[180px] w-full"
                 >
                   Get Tutoring
                 </Link>
@@ -159,7 +159,7 @@ export default function Services() {
               <div className="mt-6 text-center">
                 <Link
                   href="/contact"
-                  className="px-6 py-3 bg-[#2c9c46] text-white rounded-lg hover:bg-blue-700"
+                  className="mt-6 inline-block px-5 py-2 text-sm sm:text-base bg-[#2c9c46] text-white rounded-md shadow-md hover:bg-gray-200 transition-all duration-300 max-w-[180px] w-full"
                 >
                   Book Me for Speaking
                 </Link>
@@ -228,7 +228,7 @@ export default function Services() {
               <div className="mt-6 text-center">
                 <Link
                   href="/contact"
-                  className="px-6 py-3 bg-[#2c9c46] text-white rounded-lg hover:bg-blue-700"
+                  className="mt-6 inline-block px-5 py-2 text-sm sm:text-base bg-[#2c9c46] text-white rounded-md shadow-md hover:bg-gray-200 transition-all duration-300 max-w-[180px] w-full"
                 >
                   Request a Consultation
                 </Link>

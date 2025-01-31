@@ -52,7 +52,7 @@ export default function Work() {
         <h2 className="text-3xl font-bold dark:text-white mb-6">
           My Portfolio
         </h2>
-        <div className="flex justify-center space-x-4 mb-8">
+        <div className="flex flex-wrap justify-center gap-4 mb-8">
           <button
             onClick={() => setFilter("all")}
             className={`px-4 py-2 rounded-lg ${
@@ -94,6 +94,7 @@ export default function Work() {
             Tutoring
           </button>
         </div>
+
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 px-6">
           {filteredProjects.map((project) => (
             <div
@@ -200,21 +201,24 @@ export default function Work() {
           </div>
         </div>
       </section>
-      <section className="py-16 bg-[#2c9c46] text-white text-center">
-        <h2 className="text-3xl font-bold">
-          Let’s Build Something Amazing Together!
-        </h2>
-        <p className="text-lg mt-4">
-          Whether it’s a project, collaboration, or just a chat, I’d love to
-          hear from you.
-        </p>
-        <Link
-          href="/contact"
-          className="mt-6 inline-block px-6 py-3 bg-white text-[#2c9c46] rounded-lg shadow-lg hover:bg-gray-200 transition-all duration-300"
-        >
-          Get in Touch
-        </Link>
+      <section className="py-16 px-6 bg-[#2c9c46] text-white text-center">
+        <div className="max-w-3xl mx-auto">
+          <h2 className="text-2xl sm:text-3xl font-bold">
+            Let’s Build Something Amazing Together!
+          </h2>
+          <p className="text-base sm:text-lg mt-4">
+            Whether it’s a project, collaboration, or just a chat, I’d love to
+            hear from you.
+          </p>
+          <Link
+            href="/contact"
+            className="mt-6 inline-block px-5 py-2 text-sm sm:text-base bg-white text-[#2c9c46] rounded-md shadow-md hover:bg-gray-200 transition-all duration-300 max-w-[180px] w-full"
+          >
+            Get in Touch
+          </Link>
+        </div>
       </section>
+
       <div
         className="fixed bottom-8 right-8"
         style={{
