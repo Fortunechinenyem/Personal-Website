@@ -41,8 +41,48 @@ const projects = [
   },
 ];
 
-export default function ProjectDetail({ params: { slug } }) {
-  const project = projects.find((p) => p.slug === slug);
+export async function getStaticPaths() {
+  const paths = projects.map((project) => ({
+    params: { slug: project.slug },
+  }));
+
+  return {
+    paths,
+    fallback: false,
+  };
+}
+
+export async function getStaticProps({ params }) {
+  const project = projects.find((p) => p.slug === params.slug);
+
+  if (!project) {
+    return {
+      notFound: true,
+    };
+  }
+
+  return {
+    props: {
+      project,
+    },
+  };
+}
+
+export default function ProjectDetail({ project }) {
+  if (!project) {
+    return (
+      <Layout>
+        <section className="text-center mt-20 px-6 md:px-16">
+          <h1 className="text-4xl font-bold dark:text-white">
+            Project Not Found
+          </h1>
+          <p className="text-lg text-gray-600 dark:text-gray-300 mt-2">
+            The project you're looking for does not exist.
+          </p>
+        </section>
+      </Layout>
+    );
+  }
 
   return (
     <Layout>
@@ -57,7 +97,6 @@ export default function ProjectDetail({ params: { slug } }) {
           <h2 className="text-2xl font-bold dark:text-white mb-6">
             Project Overview
           </h2>
-          {/* <p className="text-gray-600 dark:text-gray-300">{project.overview}</p> */}
           <div className="mt-8">
             <h3 className="text-xl font-bold dark:text-white mb-4">
               Tech Stack
@@ -85,6 +124,7 @@ export default function ProjectDetail({ params: { slug } }) {
                   alt={`Screenshot ${index + 1}`}
                   width={600}
                   height={400}
+                  className="rounded-lg shadow-lg"
                 />
               ))}
             </div>

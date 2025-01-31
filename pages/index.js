@@ -180,13 +180,13 @@ export default function Home() {
 
       <section className="bg-[#2c9c46] text-white text-center py-12">
         <h2 className="text-3xl font-bold">Ready to Collaborate?</h2>
-        <p className="text-lg mt-4">
+        <p className="text-lg mt-4 mb-5">
           Whether it’s a project or a chat, I’m always open to new
           opportunities.
         </p>
         <Link
           href="/contact"
-          className="mt-6 inline-block px-6 py-3 bg-white text-[#2c9c46] rounded-lg shadow-lg hover:bg-gray-200 transition-all duration-300"
+          className="px-6 py-3 bg-white text-[#2c9c46] rounded-lg shadow-lg hover:bg-blue-700 transition-all duration-300"
         >
           Let’s Talk
         </Link>
@@ -223,12 +223,12 @@ export default function Home() {
               <h3 className="text-xl font-semibold text-gray-800 dark:text-white">
                 {post.title}
               </h3>
-              <p className="text-gray-600 dark:text-gray-300 mt-2">
+              <p className="mb-7 text-gray-600 dark:text-gray-300 mt-2">
                 {post.excerpt}
               </p>
               <Link
                 href={post.link}
-                className="mt-4 inline-block px-4 py-2 bg-[#2c9c46] text-white rounded-lg hover:bg-[#24803a] transition-all duration-300"
+                className="px-6 py-3 bg-[#2c9c46] text-white rounded-lg shadow-lg hover:bg-blue-700 transition-all duration-300"
               >
                 Read More
               </Link>
@@ -261,13 +261,13 @@ export default function Home() {
         <h2 className="text-3xl font-bold">
           Let’s Build Something Amazing Together!
         </h2>
-        <p className="text-lg mt-4">
+        <p className="text-lg mt-4 mb-7 ">
           Whether it’s a project, collaboration, or just a chat, I’d love to
           hear from you.
         </p>
         <Link
           href="/contact"
-          className="mt-6 inline-block px-6 py-3 bg-white text-[#2c9c46] rounded-lg shadow-lg hover:bg-gray-200 transition-all duration-300"
+          className="px-6 py-3 bg-white text-[#2c9c46] rounded-lg shadow-lg hover:bg-blue-700 transition-all duration-300"
         >
           Get in Touch
         </Link>
