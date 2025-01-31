@@ -49,11 +49,12 @@ const options = {
 };
 
 const funFacts = [
-  "I once coded for 24 hours straight!",
-  "I’m a huge fan of sci-fi movies.",
+  "I love to play the acoustic guitar",
+  "I’m a huge fan of Manchester United.",
   "I love solving puzzles and riddles.",
-  "I’ve traveled to 10+ countries.",
-  "I’m a coffee enthusiast ☕.",
+  "I Like to watch housing shows or property channels.",
+  "I make the best jollof rice.",
+  "I love to sing.",
 ];
 
 export default function About() {
