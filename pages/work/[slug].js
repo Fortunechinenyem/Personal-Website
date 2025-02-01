@@ -113,11 +113,11 @@ export default function ProjectDetail({ project }) {
             <h3 className="text-xl font-bold dark:text-white mb-4">
               Tech Stack
             </h3>
-            <div className="flex justify-center space-x-4">
+            <div className="flex flex-wrap justify-center gap-2 sm:gap-4">
               {project.techStack.map((tech) => (
                 <span
                   key={tech}
-                  className="px-4 py-2 bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-white rounded-lg"
+                  className="px-3 py-1 sm:px-4 sm:py-2 bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-white rounded-lg text-sm sm:text-base"
                 >
                   {tech}
                 </span>
@@ -125,10 +125,11 @@ export default function ProjectDetail({ project }) {
             </div>
           </div>
           <div className="mt-8">
-            <h3 className="text-xl font-bold dark:text-white mb-4">
+            <h3 className="text-lg sm:text-xl font-bold dark:text-white mb-4">
               Screenshots
             </h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+            <div className="text-center">
               {project.image.map((image, index) => (
                 <Image
                   key={index}
@@ -136,30 +137,25 @@ export default function ProjectDetail({ project }) {
                   alt={`Screenshot ${index + 1}`}
                   width={600}
                   height={400}
-                  className="rounded-lg shadow-lg"
+                  className="w-full h-auto rounded-lg shadow-lg"
                 />
               ))}
             </div>
-          </div>
-          <div className="mt-8">
-            <a
-              href={project.liveLink}
-              className="px-6 py-3 bg-[#2c9c46] text-white rounded-lg hover:bg-[#24803a] transition-all duration-300"
-            >
-              Live Demo
-            </a>
-            <a
-              href={project.repoLink}
-              className="ml-4 px-6 py-3 border border-[#2c9c46] text-[#2c9c46] rounded-lg hover:bg-[#2c9c46] hover:text-white transition-all duration-300"
-            >
-              GitHub Repo
-            </a>
-          </div>
-          <div className="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700">
-            <div
-              className="bg-[#2c9c46] h-2.5 rounded-full"
-              // style={{ width: `${project.progress}%` }}
-            ></div>
+
+            <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
+              <a
+                href={project.liveLink}
+                className="px-6 py-3 bg-[#2c9c46] text-white rounded-lg hover:bg-[#24803a] transition-all duration-300 w-full sm:w-auto text-center"
+              >
+                Live Demo
+              </a>
+              <a
+                href={project.repoLink}
+                className="px-6 py-3 border border-[#2c9c46] text-[#2c9c46] rounded-lg hover:bg-[#2c9c46] hover:text-white transition-all duration-300 w-full sm:w-auto text-center"
+              >
+                GitHub Repo
+              </a>
+            </div>
           </div>
         </div>
       </section>

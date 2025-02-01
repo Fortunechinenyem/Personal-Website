@@ -280,7 +280,7 @@ const projects = [
     id: 4,
     title: "Gaming Mental Health Application",
     description:
-      "TThis app helps users manage their mental health through guided journaling, mood tracking, and daily challenges. it has a reward system for completing tasks",
+      "This app helps users manage their mental health through guided journaling, mood tracking, and daily challenges. it has a reward system for completing tasks",
     image: "/images/work4.PNG",
     techStack: ["Next.js", "Firebase", "Tailwind CSS"],
     liveLink: "https://gaming-mentalhealth-app.vercel.app/",
