@@ -49,6 +49,7 @@ const options = {
 };
 
 const funFacts = [
+  "I really love Jesus, I think he's cool🙂",
   "I love to play the acoustic guitar",
   "I’m a huge fan of Manchester United.",
   "I love solving puzzles and riddles.",
