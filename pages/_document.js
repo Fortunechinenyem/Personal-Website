@@ -4,10 +4,14 @@ export default function Document() {
   return (
     <Html lang="en">
       <Head>
-        <meta charSet="UTF-8" />
-
-        <meta name="description" content="Fortune -The Brand." />
+        <meta name="description" content="Fortune - The Brand." />
         <link rel="icon" href="/favicon.ico" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossOrigin="anonymous"
+        />
       </Head>
       <body className="font-inter bg-gray-100 text-gray-900">
         <Main />
