@@ -1,3 +1,4 @@
+"use client";
 import { useEffect, useState } from "react";
 import Layout from "@/app/components/Layout";
 import Image from "next/image";
