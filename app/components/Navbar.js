@@ -6,11 +6,19 @@ import Image from "next/image";
 import { Logo } from "@/public/images";
 
 const Navbar = () => {
-  const { theme, setTheme } = useTheme();
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const { theme, setTheme, systemTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
 
-  const currentTheme = theme === "system" ? systemTheme : theme;
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) return null;
+
+  const currentTheme = theme === "system" && systemTheme ? systemTheme : theme;
+
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
