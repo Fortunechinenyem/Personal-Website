@@ -15,9 +15,11 @@ const Navbar = () => {
     setMounted(true);
   }, []);
 
-  if (!mounted) return null;
-
-  const currentTheme = theme === "system" && systemTheme ? systemTheme : theme;
+  const currentTheme = mounted
+    ? theme === "system"
+      ? systemTheme
+      : theme
+    : "light";
 
   useEffect(() => {
     const handleScroll = () => {
