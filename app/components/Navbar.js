@@ -8,18 +8,18 @@ import { Logo } from "@/public/images";
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const { theme, setTheme, systemTheme } = useTheme();
-  const [mounted, setMounted] = useState(false);
+  // const { theme, setTheme, systemTheme } = useTheme();
+  // const [mounted, setMounted] = useState(false);
 
-  useEffect(() => {
-    setMounted(true);
-  }, []);
+  // useEffect(() => {
+  //   setMounted(true);
+  // }, []);
 
-  const currentTheme = mounted
-    ? theme === "system"
-      ? systemTheme
-      : theme
-    : "light";
+  // const currentTheme = mounted
+  //   ? theme === "system"
+  //     ? systemTheme
+  //     : theme
+  //   : "light";
 
   useEffect(() => {
     const handleScroll = () => {
@@ -55,12 +55,12 @@ const Navbar = () => {
         </div>
 
         <div className="flex space-x-4 items-center">
-          <button
+          {/* <button
             onClick={() => setTheme(currentTheme === "dark" ? "light" : "dark")}
             className="p-2 rounded-full bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-white transition-all duration-300"
           >
             {currentTheme === "dark" ? <Sun size={20} /> : <Moon size={20} />}
-          </button>
+          </button> */}
 
           <button onClick={() => setIsOpen(!isOpen)} className="md:hidden">
             {isOpen ? <X size={28} /> : <Menu size={28} />}
