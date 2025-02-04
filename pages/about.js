@@ -1,6 +1,7 @@
 import Layout from "@/app/components/Layout";
 import { FaArrowUp } from "react-icons/fa";
 import { useState, useEffect } from "react";
+import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 
 import {
@@ -13,6 +14,7 @@ import {
   Legend,
 } from "chart.js";
 import Link from "next/link";
+import PhotoGallery from "@/app/components/PhotoGallery";
 
 ChartJS.register(
   RadialLinearScale,
@@ -234,6 +236,8 @@ export default function About() {
           ))}
         </div>
       </section>
+
+      <PhotoGallery />
 
       <section className="py-16 bg-[#2c9c46] text-white text-center">
         <h2 className="text-3xl font-bold">
