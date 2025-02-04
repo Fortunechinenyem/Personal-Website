@@ -299,7 +299,13 @@ const BlogPost = () => {
   return (
     <Layout>
       <section className="mt-20 px-6 md:px-16">
-        <h2 className="text-3xl font-bold capitalize dark:text-white">
+        <Link
+          href="/blog"
+          className="mt-6 mx-auto inline-flex items-center gap-2 px-4 py-2 text-sm font-medium bg-[#2c9c46] text-white rounded-md shadow-md hover:bg-[#24803a] hover:scale-105 transition-all duration-300 w-fit"
+        >
+          ← Back to Blog Gallery
+        </Link>
+        <h2 className="mt-7 text-3xl font-bold capitalize dark:text-white">
           {post.title}
         </h2>
         <div className="mt-6">

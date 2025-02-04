@@ -1,6 +1,7 @@
 import Layout from "@/app/components/Layout";
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 const projects = [
   {
@@ -99,7 +100,16 @@ export default function ProjectDetail({ project }) {
   return (
     <Layout>
       <section className="text-center mt-20 px-6 md:px-16">
-        <h1 className="text-4xl font-bold dark:text-white">{project.title}</h1>
+        <Link
+          href="/work"
+          className="mt-6 mx-auto inline-flex items-center gap-2 px-4 py-2 text-sm font-medium bg-[#2c9c46] text-white rounded-md shadow-md hover:bg-[#24803a] hover:scale-105 transition-all duration-300 w-fit"
+        >
+          ← Back to Work Gallery
+        </Link>
+
+        <h1 className="mt-7 text-4xl font-bold dark:text-white">
+          {project.title}
+        </h1>
         <p className="text-lg text-gray-600 dark:text-gray-300 mt-2">
           {project.description}
         </p>
@@ -125,9 +135,9 @@ export default function ProjectDetail({ project }) {
             </div>
           </div>
           <div className="mt-8">
-            <h3 className="text-lg sm:text-xl font-bold dark:text-white mb-4">
+            {/* <h3 className="text-lg sm:text-xl font-bold dark:text-white mb-4">
               Screenshots
-            </h3>
+            </h3> */}
 
             <div className="text-center">
               {project.image.map((image, index) => (
