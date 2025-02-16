@@ -277,8 +277,8 @@ const posts = [
     content: (
       <div>
         <p className="mb-4">
-          Ah, Valentine’s Day. The day of love, chocolates, and… task management
-          apps? Yes, you read that right. This year, instead of writing sappy
+          Ah, Valentine’s Day. The day of love, chocolates, and… some good
+          music? Yes, you read that right. This year, instead of writing sappy
           love letters or buying overpriced roses, I decided to channel my inner
           cupid and create a Valentine’s Day-app. Because nothing says “I love
           you” like a heart felt message and music with some hearts, right?
@@ -286,25 +286,23 @@ const posts = [
         <p className="mb-4">
           The idea struck me like a rogue arrow from Cupid’s bow. Why not
           combine my love for coding with the spirit of Valentine’s Day? I
-          envisioned an app where couples could manage their date plans, gift
-          ideas, and even their arguments (because let’s be real, love isn’t
-          always rainbows and butterflies). And thus, the{" "}
+          envisioned an app where couples could express themselves digitally,
+          (because let’s be real, love isn’t always rainbows and butterflies).
+          And thus, the{" "}
           <span className="font-bold text-purple-600">“Loveey”</span>
           was born.
         </p>
         <p className="mb-4">
           Building the app was a rollercoaster of emotions—kind of like dating,
           actually. And then there were the lows (like when I realized I’d spent
-          three hours debugging a button that refused to turn pink). But hey,
+          three hours debugging a feature that refused to turn pink). But hey,
           love is all about perseverance, right?
         </p>
         <p className="mb-4">
-          The app was simple but effective. Users could create boards for their
-          date plans, add tasks like “Buy chocolates” or “Don’t forget the
-          reservation,” and even assign tasks to their partner (because teamwork
-          makes the dream work). I added a few Valentine’s Day-themed touches,
-          like heart-shaped checkboxes and confetti animations when a task was
-          completed. Because who doesn’t love a little confetti in their life?
+          The app was simple but effective. Users could write a heart felt
+          message and add music to it. I added a few Valentine’s Day-themed
+          touches, like hearts and confetti animations.Because who doesn’t love
+          a little confetti in their life?
         </p>
         <p className="mb-4">
           When I finally released the app to a small group of friends, the
@@ -318,9 +316,6 @@ const posts = [
           Of course, the app wasn’t without its quirks. There was that one bug
           where the confetti animation wouldn’t stop, and users were literally
           buried in digital hearts. (Okay, maybe that wasn’t such a bad thing.)
-          And then there was the time the app accidentally sent a reminder to
-          “Break up with [Partner’s Name]” instead of “Book dinner with
-          [Partner’s Name].” (Oops. My bad.)
         </p>
         <p className="mb-4">
           But through the bugs and the laughs, I learned a valuable lesson:
