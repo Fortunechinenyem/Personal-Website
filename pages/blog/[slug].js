@@ -289,17 +289,14 @@ const posts = [
           envisioned an app where couples could manage their date plans, gift
           ideas, and even their arguments (because let’s be real, love isn’t
           always rainbows and butterflies). And thus, the{" "}
-          <span className="font-bold text-purple-600">“LoveBoard”</span>
+          <span className="font-bold text-purple-600">“Loveey”</span>
           was born.
         </p>
         <p className="mb-4">
           Building the app was a rollercoaster of emotions—kind of like dating,
-          actually. There were highs (like when I finally got the drag-and-drop
-          feature to work using{" "}
-          <span className="font-bold text-purple-600">react-beautiful-dnd</span>
-          —yes, the name alone sold me on it). And then there were the lows
-          (like when I realized I’d spent three hours debugging a button that
-          refused to turn pink). But hey, love is all about perseverance, right?
+          actually. And then there were the lows (like when I realized I’d spent
+          three hours debugging a button that refused to turn pink). But hey,
+          love is all about perseverance, right?
         </p>
         <p className="mb-4">
           The app was simple but effective. Users could create boards for their
