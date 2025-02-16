@@ -310,4 +310,15 @@ const projects = [
     slug: "valentine app",
     category: "web",
   },
+  {
+    id: 7,
+    title: "TunaCRM",
+    description: "This is a Customer Relations Management application",
+    image: "/images/work7.PNG",
+    techStack: ["Next.js", "Tailwind CSS", "Firebase"],
+    liveLink: "https://tuna-crm.vercel.app/",
+    repoLink: "https://github.com/Fortunechinenyem/Tuna-CRM",
+    slug: "crm app",
+    category: "web",
+  },
 ];

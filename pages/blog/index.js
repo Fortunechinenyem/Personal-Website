@@ -61,6 +61,13 @@ const posts = [
     image: "/images/pix2.jpg",
     category: "Tech",
   },
+  {
+    id: 8,
+    title: "Love, Bugs, and Code: My Valentine's Day App Adventure",
+    slug: "valentines-day",
+    image: "/images/pix2.jpg",
+    category: "Lifestyle",
+  },
 ];
 
 export default function Blog() {

@@ -268,6 +268,80 @@ const posts = [
       </div>
     ),
   },
+  {
+    id: 9,
+    title: "Love, Bugs, and Code: My Valentine's Day App Adventure",
+    slug: "valentines-day",
+    image: "/images/pix2.jpg",
+    category: "Lifestyle",
+    content: (
+      <div>
+        <p className="mb-4">
+          Ah, Valentine’s Day. The day of love, chocolates, and… task management
+          apps? Yes, you read that right. This year, instead of writing sappy
+          love letters or buying overpriced roses, I decided to channel my inner
+          cupid and create a Valentine’s Day-themed task management app. Because
+          nothing says “I love you” like a well-organized to-do list, right?
+        </p>
+        <p className="mb-4">
+          The idea struck me like a rogue arrow from Cupid’s bow. Why not
+          combine my love for coding with the spirit of Valentine’s Day? I
+          envisioned an app where couples could manage their date plans, gift
+          ideas, and even their arguments (because let’s be real, love isn’t
+          always rainbows and butterflies). And thus, the{" "}
+          <span className="font-bold text-purple-600">“LoveBoard”</span>
+          was born.
+        </p>
+        <p className="mb-4">
+          Building the app was a rollercoaster of emotions—kind of like dating,
+          actually. There were highs (like when I finally got the drag-and-drop
+          feature to work using{" "}
+          <span className="font-bold text-purple-600">react-beautiful-dnd</span>
+          —yes, the name alone sold me on it). And then there were the lows
+          (like when I realized I’d spent three hours debugging a button that
+          refused to turn pink). But hey, love is all about perseverance, right?
+        </p>
+        <p className="mb-4">
+          The app was simple but effective. Users could create boards for their
+          date plans, add tasks like “Buy chocolates” or “Don’t forget the
+          reservation,” and even assign tasks to their partner (because teamwork
+          makes the dream work). I added a few Valentine’s Day-themed touches,
+          like heart-shaped checkboxes and confetti animations when a task was
+          completed. Because who doesn’t love a little confetti in their life?
+        </p>
+        <p className="mb-4">
+          When I finally released the app to a small group of friends, the
+          response was overwhelming. People loved it! One friend even said,
+          “This is the most romantic thing you’ve ever done.” (I’m choosing to
+          take that as a compliment.) Couples were using it to plan their
+          perfect Valentine’s Day, and some even joked that it saved their
+          relationships. (You’re welcome, world.)
+        </p>
+        <p className="mb-4">
+          Of course, the app wasn’t without its quirks. There was that one bug
+          where the confetti animation wouldn’t stop, and users were literally
+          buried in digital hearts. (Okay, maybe that wasn’t such a bad thing.)
+          And then there was the time the app accidentally sent a reminder to
+          “Break up with [Partner’s Name]” instead of “Book dinner with
+          [Partner’s Name].” (Oops. My bad.)
+        </p>
+        <p className="mb-4">
+          But through the bugs and the laughs, I learned a valuable lesson:
+          love, like coding, is all about iteration. You try, you fail, you
+          debug, and you try again. And sometimes, you end up creating something
+          that brings a little joy to people’s lives—even if it’s just a silly
+          app that helps them remember to buy flowers.
+        </p>
+        <p className="mb-4">
+          So this Valentine’s Day, whether you’re spending it with a significant
+          other, your friends, or just your laptop (hello, fellow coders),
+          remember that love comes in many forms. For me, it came in the form of
+          an app that made people smile—and maybe saved a few relationships
+          along the way. ❤️
+        </p>
+      </div>
+    ),
+  },
 ];
 
 const BlogPost = () => {
