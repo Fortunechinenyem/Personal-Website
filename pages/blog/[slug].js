@@ -280,8 +280,8 @@ const posts = [
           Ah, Valentine’s Day. The day of love, chocolates, and… task management
           apps? Yes, you read that right. This year, instead of writing sappy
           love letters or buying overpriced roses, I decided to channel my inner
-          cupid and create a Valentine’s Day-themed task management app. Because
-          nothing says “I love you” like a well-organized to-do list, right?
+          cupid and create a Valentine’s Day-app. Because nothing says “I love
+          you” like a heart felt message and music with some hearts, right?
         </p>
         <p className="mb-4">
           The idea struck me like a rogue arrow from Cupid’s bow. Why not
