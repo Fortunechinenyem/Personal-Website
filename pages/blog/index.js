@@ -54,15 +54,16 @@ const posts = [
     image: "/images/pix5.jpg",
     category: "Tech",
   },
-  {
-    id: 7,
-    title: "The Journey of Growth",
-    slug: "the-journey-of-growth",
-    image: "/images/pix2.jpg",
-    category: "Tech",
-  },
+
   {
     id: 8,
+    title: "The Journey of Growth",
+    slug: "journey-of-growth",
+    image: "/images/pix2.jpg",
+    category: "Career",
+  },
+  {
+    id: 9,
     title: "Love, Bugs, and Code: My Valentine's Day App Adventure",
     slug: "valentines-day",
     image: "/images/work6.PNG",
