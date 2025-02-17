@@ -272,7 +272,7 @@ const posts = [
     id: 9,
     title: "Love, Bugs, and Code: My Valentine's Day App Adventure",
     slug: "valentines-day",
-    image: "/images/pix2.jpg",
+    image: "/images/work6.PNG",
     category: "Lifestyle",
     content: (
       <div>

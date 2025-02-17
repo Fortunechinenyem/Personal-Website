@@ -65,7 +65,7 @@ const posts = [
     id: 8,
     title: "Love, Bugs, and Code: My Valentine's Day App Adventure",
     slug: "valentines-day",
-    image: "/images/pix2.jpg",
+    image: "/images/work6.PNG",
     category: "Lifestyle",
   },
 ];
